@@ -1,4 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="KVGCharacter" representedClassName="KVGCharacter" syncable="YES">
+        <attribute name="character" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="element" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="KVGElement" inverseName="character" inverseEntity="KVGElement" syncable="YES"/>
+    </entity>
+    <entity name="KVGElement" representedClassName="KVGElement" syncable="YES">
+        <attribute name="mostSimilarUnicode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="number" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="partial" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="position" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="radical" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="semanticUnicode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="strokeOrder" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="variant" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="character" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="KVGCharacter" inverseName="element" inverseEntity="KVGCharacter" syncable="YES"/>
+        <relationship name="childElements" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="KVGElement" inverseName="parentElement" inverseEntity="KVGElement" syncable="YES"/>
+        <relationship name="parentElement" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="KVGElement" inverseName="childElements" inverseEntity="KVGElement" syncable="YES"/>
+        <relationship name="rootStrokes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="KVGStroke" inverseName="element" inverseEntity="KVGStroke" syncable="YES"/>
+    </entity>
+    <entity name="KVGStroke" representedClassName="KVGStroke" syncable="YES">
+        <attribute name="path" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <relationship name="element" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="KVGElement" inverseName="rootStrokes" inverseEntity="KVGElement" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="KVGCharacter" positionX="-2" positionY="180" width="128" height="73"/>
+        <element name="KVGElement" positionX="180" positionY="216" width="128" height="223"/>
+        <element name="KVGStroke" positionX="378" positionY="245" width="128" height="73"/>
+    </elements>
 </model>
