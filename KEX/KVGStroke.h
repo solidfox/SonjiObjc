@@ -7,7 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "RXMLElement.h"
+#import <CoreData/CoreData.h>
 
-@interface KVGStroke : NSObject
+@interface KVGStroke : NSManagedObject
+
+@property (strong, nonatomic, readonly) UIBezierPath *path;
+@property (readonly) NSInteger strokeOrder;
+
++ (KVGStroke *)strokeFromRXML:(RXMLElement *)pathElement
+       inManagedObjectContext:(NSManagedObjectContext *)context;
 
 @end

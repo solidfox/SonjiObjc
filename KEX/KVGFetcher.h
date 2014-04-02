@@ -7,7 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "KVGCharacter+Creation.h"
 
-@interface KVGCache : NSObject
+@interface KVGFetcher : NSObject
+
+/**
+ Gets a KVGCharacter object for the given character from the cache or, if the cache does not have the character, from the github repository.
+ */
+- (KVGCharacter *)characterFor:(unichar)unicodeCharacter;
+
+/**
+ Asynchronously caches the characters in the given string from the KanjiVG git hub repository for fast access through getKVGCharacterFor. Will skip those already cached. getKVGCharacterFor will still work for uncached characters but may block the main thread while trying to download the character.
+ */
+//- (NSArray *)cacheCharacters:(NSString *)characterString;
 
 @end

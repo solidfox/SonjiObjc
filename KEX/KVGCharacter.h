@@ -7,7 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "KVGElement.h"
+#import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
-@interface DSKanji : NSObject
+/** This class represents a KanjiVG character. It contains metadata about the character and a tree of the characters elements and leaf strokes.
+ 
+    The class is a subclass of NSManagedObject and so can easily be stored in a CoreData database. See KVGCache for an implementation of such a database.
+ */
+
+@interface KVGCharacter : NSManagedObject
+
+@property (nonatomic, retain) NSString *character;
+@property (nonatomic, retain) KVGElement *element;
 
 @end
