@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[DSViewController viewDidLoad]:DSViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[character strokes]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "+[KVGCharacter characterFromRXMLElement:inManagedObjectContext:]:KVGCharacter.m">
+      </ContextState>
+      <ContextState
+         contextName = "+[KVGCharacter characterFromSVGData:inManagedObjectContext:]:KVGCharacter.m">
+      </ContextState>
+      <ContextState
+         contextName = "+[KVGElement elementFromRXML:inManagedObjectContext:]:KVGElement.m">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
