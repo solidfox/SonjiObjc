@@ -8,6 +8,7 @@
 
 #import "DSCharacterCanvas.h"
 #import "DSCharacterView.h"
+#import "UIBezierPath+Comparison.h"
 
 @interface DSCharacterCanvas ()
 
@@ -94,6 +95,12 @@
 - (void)unistrokeGestureRecognizer:(CMUnistrokeGestureRecognizer *)unistrokeGestureRecognizer isEvaluatingStrokePath:(UIBezierPath *)strokePath
 {
     self.currentDrawnPath = strokePath;
+    
+    UIBezierPath *targetPath = [self.targetPaths objectAtIndex:[self.drawnPaths count]];
+    targetPath = [UIBezierPath bezierPathWithCGPath:targetPath.CGPath];
+    [targetPath applyTransform:templatePathScaler];
+    NSLog(@"Average distance: %f", [targetPath compareTo:strokePath]);
+    
     [self setNeedsDisplay];
 }
 
