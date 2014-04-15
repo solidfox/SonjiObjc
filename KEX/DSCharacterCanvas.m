@@ -48,6 +48,16 @@
     for (UIBezierPath *path in self.drawnPaths) {
         [path stroke];
     }
+    
+    // DEBUG drawing
+    UIBezierPath *targetPath = [self.targetPaths objectAtIndex:[self.drawnPaths count]];
+    targetPath = [UIBezierPath bezierPathWithCGPath:targetPath.CGPath];
+    [targetPath applyTransform:templatePathScaler];
+    [[UIColor redColor] setStroke];
+    [targetPath stroke];
+    
+    
+    [[UIColor blueColor] setStroke];
     [self.currentDrawnPath stroke];
 }
 
