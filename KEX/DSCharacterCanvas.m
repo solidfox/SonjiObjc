@@ -128,6 +128,7 @@
     self.character = [[DSCharacterView alloc] initWithFrame:self.bounds];
     [self addSubview:self.character];
     self.character.opaque = false;
+    self.character.alpha = .5;
     
     templatePathScaler = CGAffineTransformMakeScale(self.bounds.size.width /KVG_CHARACTER_DIMENSION, self.bounds.size.height / KVG_CHARACTER_DIMENSION);
     
