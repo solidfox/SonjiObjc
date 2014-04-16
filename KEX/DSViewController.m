@@ -17,6 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet DSCharacterCanvas *kanjiCanvas;
 @property (strong, nonatomic) KVGFetcher *characterRepo;
+@property (weak, nonatomic) IBOutlet UISlider *strokesSlider;
 
 @end
 
@@ -42,6 +43,9 @@
         [self.kanjiCanvas addStroke:stroke.path];
     }
     
+    self.strokesSlider.maximumValue = [character.strokes count];
+    self.strokesSlider.value = self.strokesSlider.maximumValue;
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -49,6 +53,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)strokeSliderChanged:(UISlider *)sender {
+    self.kanjiCanvas.shownStrokes = sender.value;
 }
 
 @end
