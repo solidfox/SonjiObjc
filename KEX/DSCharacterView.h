@@ -14,6 +14,7 @@
 
 @property (nonatomic) CGSize inputCharacterDimensions;
 @property (nonatomic, readonly) NSInteger numberOfStrokes;
+@property (nonatomic) NSInteger shownStrokes;
 
 - (void)addStroke:(UIBezierPath *)path;
 

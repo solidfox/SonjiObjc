@@ -40,6 +40,14 @@
     [self setNeedsDisplay];
 }
 
+- (void)setShownStrokes:(NSInteger)shownStrokes
+{
+    if (shownStrokes < self.numberOfStrokes && shownStrokes >= 0) {
+        _shownStrokes = shownStrokes;
+    }
+    [self setNeedsDisplay];
+}
+
 #pragma mark - Drawing
 
 - (void)drawRect:(CGRect)rect
@@ -50,8 +58,9 @@
     [[UIColor blackColor] setStroke];
     
     for (UIBezierPath *stroke in self.strokes) {
-        NSLog(@"%fx%f", xFactor, yFactor);
-        [stroke stroke];
+        if ([self.strokes indexOfObject:stroke] <= self.shownStrokes) {
+            [stroke stroke];
+        }
     }
 }
 

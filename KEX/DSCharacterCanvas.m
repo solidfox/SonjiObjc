@@ -90,6 +90,16 @@
     [self.unistrokeRecognizer registerUnistrokeWithName:@"recognized" bezierPath:scaledTemplatePath];
 }
 
+- (void)setShownStrokes:(NSInteger)shownStrokes
+{
+    self.character.shownStrokes = shownStrokes;
+}
+
+- (NSInteger)shownStrokes
+{
+    return self.character.shownStrokes;
+}
+
 #pragma mark - GestureRecognizer delegated methods
 
 - (void)unistrokeGestureRecognizer:(CMUnistrokeGestureRecognizer *)unistrokeGestureRecognizer isEvaluatingStrokePath:(UIBezierPath *)strokePath

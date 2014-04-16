@@ -12,6 +12,8 @@
 
 @interface DSCharacterCanvas : UIView <CMUnistrokeGestureRecognizerDelegate>
 
+@property (nonatomic) NSInteger shownStrokes;
+
 - (void)unistrokeRecognizer:(CMUnistrokeGestureRecognizer *)recognizer;
 - (void)addStroke:(UIBezierPath *)path;
 
