@@ -1,6 +1,3 @@
-[submodule "Frameworks/pd-for-ios"]
-	path = Frameworks/pd-for-ios
-	url = https://github.com/libpd/pd-for-ios.git
 [submodule "Frameworks/libpd"]
 	path = Frameworks/libpd
 	url = https://github.com/libpd/libpd.git
