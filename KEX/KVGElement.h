@@ -9,9 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "RXMLElement.h"
 #import "KVGStroke.h"
-#import <CoreData/CoreData.h>
 
-@interface KVGElement : NSManagedObject
+@interface KVGElement : NSObject
 
 typedef NS_ENUM(int16_t, KVGRadical) {
     KVGRadicalNone = 0,
@@ -34,16 +33,16 @@ typedef NS_ENUM(int16_t, KVGPosition) {
 };
 
 
-@property (retain, nonatomic, readonly) NSString *mostSimilarUnicode; // kvg:element attribute
-@property (retain, nonatomic, readonly) NSString *semanticUnicode; // kvg:original attribute
-@property (readonly) KVGPosition position;
-@property (readonly) KVGRadical radical;
-@property (readonly) bool variant;
-@property (readonly) bool partial;
-@property (readonly) NSInteger number;
-@property (nonatomic, retain) NSSet *childElements;
-@property (nonatomic, retain) KVGElement *parentElement;
-@property (nonatomic, retain) NSSet *rootStrokes;
+@property (nonatomic, readonly) unichar mostSimilarUnicode;    // kvg:element attribute
+@property (nonatomic, readonly) unichar semanticUnicode;       // kvg:original attribute
+@property (nonatomic, readonly) KVGPosition position;           // kvg:position attribute
+@property (nonatomic, readonly) KVGRadical radical;             // kvg:radical attribute
+@property (nonatomic, readonly) bool variant;                   // kvg:variant attribute
+@property (nonatomic, readonly) bool partial;                   // kvg:partial attribute
+@property (nonatomic, readonly) NSInteger number;               // kvg:number attribute
+@property (strong, nonatomic, readonly) NSArray *childElements;
+@property (strong, nonatomic, readonly) KVGElement *parentElement;
+@property (strong, nonatomic, readonly) NSArray *rootStrokes;
 
 /** Goes through the element tree, finding all strokes of the element.
  
@@ -51,20 +50,6 @@ typedef NS_ENUM(int16_t, KVGPosition) {
  */
 - (NSArray *)strokes;
 
-+ (KVGElement *)elementFromRXML:(RXMLElement *)elementNode inManagedObjectContext:(NSManagedObjectContext *)context;
-
-@end
-
-@interface KVGElement (CoreDataGeneratedAccessors)
-
-- (void)addChildElementsObject:(KVGElement *)value;
-- (void)removeChildElementsObject:(KVGElement *)value;
-- (void)addChildElements:(NSSet *)values;
-- (void)removeChildElements:(NSSet *)values;
-
-- (void)addRootStrokesObject:(KVGStroke *)value;
-- (void)removeRootStrokesObject:(KVGStroke *)value;
-- (void)addRootStrokes:(NSSet *)values;
-- (void)removeRootStrokes:(NSSet *)values;
++ (KVGElement *)elementFromRXML:(RXMLElement *)elementNode;
 
 @end

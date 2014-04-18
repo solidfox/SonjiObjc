@@ -11,14 +11,75 @@
 
 @interface KVGCharacter ()
 
-//@property (retain, nonatomic, readwrite) NSString *character;
-//@property (retain, nonatomic, readwrite) KVGElement *element;
+@property (nonatomic, readwrite) unichar character;
+@property (strong, nonatomic, readwrite) KVGElement *element;
 
 @end
 
 @implementation KVGCharacter
 
-@dynamic element;
-@dynamic character;
+- (NSArray *)strokes
+{
+    return [self.element strokes];
+}
+
+#pragma mark Initialization
+
++ (KVGCharacter *)characterFromSVGFile:(NSString *)filename
+{
+    RXMLElement *rootNode = [RXMLElement elementFromXMLFile:[NSString stringWithFormat:@"%@.svg", filename]];
+    
+    return [[KVGCharacter alloc] initFromRXMLElement:rootNode];
+}
+
++ (KVGCharacter *)characterFromSVGData:(NSData *)data
+{
+    RXMLElement *rootNode = [RXMLElement elementFromXMLData:data];
+    
+    return [[KVGCharacter alloc] initFromRXMLElement:rootNode];
+}
+
+- (id)initFromRXMLElement:(RXMLElement *)rootNode
+{
+    self = [self init];
+    
+    if ([KVGCharacter isValidKanjiVGFile:rootNode]){
+        
+        __block RXMLElement *strokePathsNode = nil;
+        [rootNode iterate:@"g" usingBlock:^(RXMLElement *group) {
+            if ([[group attribute:@"id"] hasPrefix:@"kvg:StrokePaths"]) {
+                strokePathsNode = group;
+            }
+        }];
+        
+        RXMLElement *characterGroup = [strokePathsNode child:@"g"];
+        
+        self.character = [[characterGroup attribute:@"element"] characterAtIndex:0];
+        
+        self.element = [KVGElement elementFromRXML:characterGroup];
+    }
+    
+    return self;
+}
+
+
+#pragma mark - Private methods
+
++ (bool) isValidKanjiVGFile: (RXMLElement *) root
+{
+    NSRegularExpression *characterCodeRE =
+    [NSRegularExpression regularExpressionWithPattern:@"^kvg:([a-f0-9]{5})$"
+                                              options:NSRegularExpressionCaseInsensitive
+                                                error:nil];
+    
+    RXMLElement *characterGroup = [[[root children:@"g"] objectAtIndex:0] child:@"g"];
+    
+    // Get the unicode character
+    NSString *idAttr = [characterGroup attribute:@"id"];
+    // Check if idAttr is valid
+    NSTextCheckingResult *valid = [characterCodeRE firstMatchInString:idAttr options:0 range:NSMakeRange(0, [idAttr length])];
+    
+    return valid;
+}
 
 @end

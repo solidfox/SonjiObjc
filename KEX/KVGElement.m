@@ -10,13 +10,16 @@
 
 @interface KVGElement ()
 
-@property (retain, nonatomic, readwrite) NSString *mostSimilarUnicode;
-@property (retain, nonatomic, readwrite) NSString *semanticUnicode;
-@property (readwrite) KVGPosition position;
-@property (readwrite) KVGRadical radical;
-@property (readwrite) bool variant;
-@property (readwrite) bool partial;
-@property (readwrite) NSInteger number;
+@property (nonatomic, readwrite) unichar mostSimilarUnicode;
+@property (nonatomic, readwrite) unichar semanticUnicode;
+@property (nonatomic, readwrite) KVGPosition position;
+@property (nonatomic, readwrite) KVGRadical radical;
+@property (nonatomic, readwrite) bool variant;
+@property (nonatomic, readwrite) bool partial;
+@property (nonatomic, readwrite) NSInteger number;
+@property (strong, nonatomic, readwrite) NSArray *childElements;
+@property (strong, nonatomic, readwrite) KVGElement *parentElement;
+@property (strong, nonatomic, readwrite) NSArray *rootStrokes;
 
 @end
 
@@ -24,19 +27,21 @@
 
 #pragma mark - Properties
 
-@dynamic mostSimilarUnicode;
-@dynamic semanticUnicode;
-@dynamic position;
-@dynamic radical;
-@dynamic variant;
-@dynamic partial;
-@dynamic number;
-@dynamic rootStrokes;
+- (NSArray *)childElements
+{
+    if (!_childElements) {
+        _childElements = [[NSMutableArray alloc] init];
+    }
+    return _childElements;
+}
 
-@dynamic childElements;
-@dynamic parentElement;
-
-
+- (NSArray *)rootStrokes
+{
+    if (!_rootStrokes) {
+        _rootStrokes = [[NSMutableArray alloc] init];
+    }
+    return _rootStrokes;
+}
 
 #pragma mark - Stroke stuff
 
@@ -49,24 +54,24 @@
     for (KVGElement *element in self.childElements) {
         [strokes addObjectsFromArray:[element strokes]];
     }
-    return strokes;
-//    return [strokes sortedArrayUsingComparator:^NSComparisonResult(KVGStroke *obj1, KVGStroke *obj2) {
-//        if (obj1.strokeOrder > obj2.strokeOrder) {
-//            return (NSComparisonResult)NSOrderedDescending;
-//        }
-//        
-//        if (obj1.strokeOrder < obj2.strokeOrder) {
-//            return (NSComparisonResult)NSOrderedAscending;
-//        }
-//        return (NSComparisonResult)NSOrderedSame;
-//    }];
+
+    return [strokes sortedArrayUsingComparator:^NSComparisonResult(KVGStroke *obj1, KVGStroke *obj2) {
+        if (obj1.strokeOrder > obj2.strokeOrder) {
+            return (NSComparisonResult)NSOrderedDescending;
+        }
+        
+        if (obj1.strokeOrder < obj2.strokeOrder) {
+            return (NSComparisonResult)NSOrderedAscending;
+        }
+        return (NSComparisonResult)NSOrderedSame;
+    }];
 }
 
 #pragma mark - Initialization
 
-+ (KVGElement *)elementFromRXML:(RXMLElement *)elementNode inManagedObjectContext:(NSManagedObjectContext *)context
++ (KVGElement *)elementFromRXML:(RXMLElement *)elementNode
 {
-    KVGElement *element = [KVGElement newKVGElementInManagedObjectContext:context];
+    KVGElement *element = [[KVGElement alloc] init];
     
     [element readAttributesFrom:elementNode];
         
@@ -74,13 +79,12 @@
     [elementNode iterate:@"*" usingBlock:^(RXMLElement *elementChildNode){
         if ([elementChildNode.tag isEqualToString:@"g"])
         {
-            KVGElement *newElement = [KVGElement elementFromRXML:elementChildNode inManagedObjectContext:context];
-            [element addChildElementsObject:newElement];
+            KVGElement *newElement = [KVGElement elementFromRXML:elementChildNode];
+            [(NSMutableArray *)element.childElements addObject:newElement];
             
         } else if ([elementChildNode.tag isEqualToString:@"path"]) {
-            KVGStroke *stroke = [KVGStroke strokeFromRXML:elementChildNode
-                                   inManagedObjectContext:context];
-            [element addRootStrokesObject:stroke];
+            KVGStroke *stroke = [[KVGStroke alloc] initFromRXML:elementChildNode];
+            [(NSMutableArray *)element.rootStrokes addObject:stroke];
             
         }
         
@@ -90,17 +94,11 @@
     return element;
 }
 
-+ (KVGElement *)newKVGElementInManagedObjectContext:(NSManagedObjectContext *)context
-{
-    return [NSEntityDescription insertNewObjectForEntityForName:@"KVGElement"
-                                            inManagedObjectContext:context];
-}
-
 #pragma mark - Private methods
 
 - (void)readAttributesFrom:(RXMLElement *)XMLRepresentation {
-    self.mostSimilarUnicode = [XMLRepresentation attribute:@"element"];
-    self.semanticUnicode = [XMLRepresentation attribute:@"original"];
+    self.mostSimilarUnicode = [[XMLRepresentation attribute:@"element"] characterAtIndex:0];
+    self.semanticUnicode = [[XMLRepresentation attribute:@"original"] characterAtIndex:0];
     
     NSString *position = [XMLRepresentation attribute:@"position"];
     if (!position) {self.position = KVGPositionNone;}
@@ -136,7 +134,7 @@
 - (NSString *)description
 {
     return [NSString stringWithFormat:
-            @"KVGElement: %@\nVariant:%@\nNumber:%ld", self.mostSimilarUnicode, self.variant ? @"true" : @"false", (long)self.number];
+            @"KVGElement: %hu\nVariant:%@\nNumber:%ld", self.mostSimilarUnicode, self.variant ? @"true" : @"false", (long)self.number];
 }
 
 @end

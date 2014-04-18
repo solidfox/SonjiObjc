@@ -7,35 +7,31 @@
 //
 
 #import "DSViewController.h"
-#import "KVGCharacter+Creation.h"
+#import "KVGCharacter.h"
 #import "DSCharacterCanvas.h"
 #import "CMUnistrokeGestureRecognizer.h"
-#import "KVGFetcher.h"
+#import "KVGRepository.h"
+#import "DSStrokeSonifier.h"
 
 
 @interface DSViewController ()
 
 @property (weak, nonatomic) IBOutlet DSCharacterCanvas *kanjiCanvas;
-@property (strong, nonatomic) KVGFetcher *characterRepo;
+@property (weak, nonatomic) IBOutlet UITextField *kanjiTextField;
 @property (weak, nonatomic) IBOutlet UISlider *strokesSlider;
 
 @end
 
 @implementation DSViewController
 
-- (KVGFetcher *)characterRepo
-{
-    if (!_characterRepo) {
-        _characterRepo = [[KVGFetcher alloc] init];
-    }
-    return _characterRepo;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    KVGCharacter *character = [self.characterRepo characterFor:[@"選" characterAtIndex:0]];
+//    DSStrokeSonifier *sonifier = [[DSStrokeSonifier alloc] init];
+    
+    NSData * characterData = [KVGRepository characterDataFor:[@"選" characterAtIndex:0]];
+    KVGCharacter *character = [KVGCharacter characterFromSVGData:characterData];
     
     //self.kanjiView.inputCharacterDimensions = character.dimensions;
     
