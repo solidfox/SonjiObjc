@@ -9,9 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>MOGenerator.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>961AE4EF1900827C001903BC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>966F4D9C18B5FCC2004EC50C</key>
 		<dict>
 			<key>primary</key>
