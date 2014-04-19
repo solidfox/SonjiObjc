@@ -11,6 +11,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[UIBezierPath(Comparison) averageDistanceToPoints:withDetail:]:UIBezierPath+Comparison.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "done[i]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "+[KVGCharacter characterFromRXMLElement:inManagedObjectContext:]:KVGCharacter.m">
       </ContextState>
       <ContextState
