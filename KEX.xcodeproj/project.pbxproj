@@ -25,17 +25,18 @@
 		960151A218BBB679009046C9 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 960151A118BBB679009046C9 /* libxml2.dylib */; };
 		960151A418BBB687009046C9 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 960151A318BBB687009046C9 /* libz.dylib */; };
 		960151A618BBB73D009046C9 /* 04e2d.svg in Resources */ = {isa = PBXBuildFile; fileRef = 960151A518BBB73D009046C9 /* 04e2d.svg */; };
-		960151A918BBF6EB009046C9 /* KVGCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 960151A818BBF6EB009046C9 /* KVGCharacter.m */; };
 		96124CD918CC77BD0044BD6B /* libCMUnistrokeGestureRecognizer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96124CD618CC777E0044BD6B /* libCMUnistrokeGestureRecognizer.a */; };
-		9612A4D718CF6C690044BD6B /* KVGRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 9612A4D618CF6C690044BD6B /* KVGRepository.m */; };
 		9612A4DD18D1A05D0044BD6B /* KVGModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9612A4DB18D1A05D0044BD6B /* KVGModel.xcdatamodeld */; };
-		962C744F18C1F98E0000501A /* KVGElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 962C744E18C1F98E0000501A /* KVGElement.m */; };
+		961AE5151902681D001903BC /* KVGCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 961AE50C1902681D001903BC /* KVGCharacter.m */; };
+		961AE5161902681D001903BC /* KVGElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 961AE50E1902681D001903BC /* KVGElement.m */; };
+		961AE5171902681D001903BC /* KVGModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 961AE50F1902681D001903BC /* KVGModel.xcdatamodeld */; };
+		961AE5181902681D001903BC /* KVGRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 961AE5121902681D001903BC /* KVGRepository.m */; };
+		961AE5191902681D001903BC /* KVGStroke.m in Sources */ = {isa = PBXBuildFile; fileRef = 961AE5141902681D001903BC /* KVGStroke.m */; };
 		962EC57A19007D0800AED439 /* DSStrokeSonifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 962EC57819007D0800AED439 /* DSStrokeSonifier.m */; };
 		962EC57B19007D0800AED439 /* pitchedNoise.pd in Resources */ = {isa = PBXBuildFile; fileRef = 962EC57919007D0800AED439 /* pitchedNoise.pd */; };
 		962EC58919007F1400AED439 /* libpd-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 960C91B21900799100A3E9C3 /* libpd-ios.a */; };
 		962EC58B19007F2300AED439 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 962EC58A19007F2300AED439 /* AudioToolbox.framework */; };
 		962EC58D19007F3000AED439 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 962EC58C19007F3000AED439 /* AVFoundation.framework */; };
-		964F25DD18C37ADA0041F2BD /* KVGStroke.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AB41AE18C3316700FD1AC1 /* KVGStroke.m */; };
 		964F25E618C491100041F2BD /* DSCharacterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 964F25E518C491100041F2BD /* DSCharacterView.m */; };
 		966F4DA118B5FCC2004EC50C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966F4DA018B5FCC2004EC50C /* Foundation.framework */; };
 		966F4DA318B5FCC2004EC50C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966F4DA218B5FCC2004EC50C /* CoreGraphics.framework */; };
@@ -111,15 +112,18 @@
 		960151A118BBB679009046C9 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		960151A318BBB687009046C9 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		960151A518BBB73D009046C9 /* 04e2d.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = 04e2d.svg; sourceTree = "<group>"; };
-		960151A718BBF6EB009046C9 /* KVGCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KVGCharacter.h; path = KEX/KVGCharacter.h; sourceTree = SOURCE_ROOT; };
-		960151A818BBF6EB009046C9 /* KVGCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KVGCharacter.m; path = KEX/KVGCharacter.m; sourceTree = SOURCE_ROOT; };
 		960C91AC1900799100A3E9C3 /* libpd.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpd.xcodeproj; path = Frameworks/libpd/libpd.xcodeproj; sourceTree = "<group>"; };
 		96124CD018CC777E0044BD6B /* CMUnistrokeGestureRecognizer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CMUnistrokeGestureRecognizer.xcodeproj; path = ../Frameworks/CMUnistrokeRecognizer/CMUnistrokeGestureRecognizer/CMUnistrokeGestureRecognizer.xcodeproj; sourceTree = "<group>"; };
-		9612A4D518CF6C690044BD6B /* KVGRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KVGRepository.h; path = KEX/KVGRepository.h; sourceTree = SOURCE_ROOT; };
-		9612A4D618CF6C690044BD6B /* KVGRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KVGRepository.m; path = KEX/KVGRepository.m; sourceTree = SOURCE_ROOT; };
 		9612A4DC18D1A05D0044BD6B /* KVGModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KVGModel.xcdatamodel; sourceTree = "<group>"; };
-		962C744D18C1F98E0000501A /* KVGElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KVGElement.h; path = KEX/KVGElement.h; sourceTree = SOURCE_ROOT; };
-		962C744E18C1F98E0000501A /* KVGElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KVGElement.m; path = KEX/KVGElement.m; sourceTree = SOURCE_ROOT; };
+		961AE50B1902681D001903BC /* KVGCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVGCharacter.h; sourceTree = "<group>"; };
+		961AE50C1902681D001903BC /* KVGCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVGCharacter.m; sourceTree = "<group>"; };
+		961AE50D1902681D001903BC /* KVGElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVGElement.h; sourceTree = "<group>"; };
+		961AE50E1902681D001903BC /* KVGElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVGElement.m; sourceTree = "<group>"; };
+		961AE5101902681D001903BC /* KVGModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KVGModel.xcdatamodel; sourceTree = "<group>"; };
+		961AE5111902681D001903BC /* KVGRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVGRepository.h; sourceTree = "<group>"; };
+		961AE5121902681D001903BC /* KVGRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVGRepository.m; sourceTree = "<group>"; };
+		961AE5131902681D001903BC /* KVGStroke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVGStroke.h; sourceTree = "<group>"; };
+		961AE5141902681D001903BC /* KVGStroke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVGStroke.m; sourceTree = "<group>"; };
 		962EC57719007D0800AED439 /* DSStrokeSonifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DSStrokeSonifier.h; path = Sonification/DSStrokeSonifier.h; sourceTree = "<group>"; };
 		962EC57819007D0800AED439 /* DSStrokeSonifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DSStrokeSonifier.m; path = Sonification/DSStrokeSonifier.m; sourceTree = "<group>"; };
 		962EC57919007D0800AED439 /* pitchedNoise.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = pitchedNoise.pd; path = Sonification/PureData/pitchedNoise.pd; sourceTree = "<group>"; };
@@ -151,8 +155,6 @@
 		9690EDC918C9C56F008FE980 /* DSCharacterCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSCharacterCanvas.h; sourceTree = "<group>"; };
 		9690EDCA18C9C56F008FE980 /* DSCharacterCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSCharacterCanvas.m; sourceTree = "<group>"; };
 		9690EDCC18C9C5F7008FE980 /* libCMUnistrokeGestureRecognizer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCMUnistrokeGestureRecognizer.a; path = "../Frameworks/CMUnistrokeGestureRecognizer-master/CMUnistrokeGestureRecognizer/build/Debug-iphoneos/libCMUnistrokeGestureRecognizer.a"; sourceTree = "<group>"; };
-		96AB41AD18C3316700FD1AC1 /* KVGStroke.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KVGStroke.h; path = KEX/KVGStroke.h; sourceTree = SOURCE_ROOT; };
-		96AB41AE18C3316700FD1AC1 /* KVGStroke.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = KVGStroke.m; path = KEX/KVGStroke.m; sourceTree = SOURCE_ROOT; };
 		E235C8E93EEA47598DDE60AD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		F81EB54718D34BA0B98EF3C1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -206,9 +208,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		961AE4F619008393001903BC /* KVG */ = {
+		961AE50A1902681D001903BC /* KVG */ = {
 			isa = PBXGroup;
 			children = (
+				961AE50B1902681D001903BC /* KVGCharacter.h */,
+				961AE50C1902681D001903BC /* KVGCharacter.m */,
+				961AE50D1902681D001903BC /* KVGElement.h */,
+				961AE50E1902681D001903BC /* KVGElement.m */,
+				961AE50F1902681D001903BC /* KVGModel.xcdatamodeld */,
+				961AE5111902681D001903BC /* KVGRepository.h */,
+				961AE5121902681D001903BC /* KVGRepository.m */,
+				961AE5131902681D001903BC /* KVGStroke.h */,
+				961AE5141902681D001903BC /* KVGStroke.m */,
 			);
 			path = KVG;
 			sourceTree = "<group>";
@@ -273,7 +284,7 @@
 		966F4DA618B5FCC2004EC50C /* KEX */ = {
 			isa = PBXGroup;
 			children = (
-				961AE4F619008393001903BC /* KVG */,
+				961AE50A1902681D001903BC /* KVG */,
 				962EC57619007CF300AED439 /* Sonification */,
 				960151A518BBB73D009046C9 /* 04e2d.svg */,
 				9612A4DB18D1A05D0044BD6B /* KVGModel.xcdatamodeld */,
@@ -285,14 +296,6 @@
 				966F4DB518B5FCC2004EC50C /* Main_iPad.storyboard */,
 				966F4DB818B5FCC2004EC50C /* DSViewController.h */,
 				966F4DB918B5FCC2004EC50C /* DSViewController.m */,
-				9612A4D518CF6C690044BD6B /* KVGRepository.h */,
-				9612A4D618CF6C690044BD6B /* KVGRepository.m */,
-				960151A718BBF6EB009046C9 /* KVGCharacter.h */,
-				960151A818BBF6EB009046C9 /* KVGCharacter.m */,
-				962C744D18C1F98E0000501A /* KVGElement.h */,
-				962C744E18C1F98E0000501A /* KVGElement.m */,
-				96AB41AD18C3316700FD1AC1 /* KVGStroke.h */,
-				96AB41AE18C3316700FD1AC1 /* KVGStroke.m */,
 				966F4DBB18B5FCC2004EC50C /* Images.xcassets */,
 				966F4DA718B5FCC2004EC50C /* Supporting Files */,
 			);
@@ -532,16 +535,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				964F25DD18C37ADA0041F2BD /* KVGStroke.m in Sources */,
-				9612A4D718CF6C690044BD6B /* KVGRepository.m in Sources */,
-				960151A918BBF6EB009046C9 /* KVGCharacter.m in Sources */,
 				962EC57A19007D0800AED439 /* DSStrokeSonifier.m in Sources */,
 				966F4DAD18B5FCC2004EC50C /* main.m in Sources */,
+				961AE5161902681D001903BC /* KVGElement.m in Sources */,
+				961AE5191902681D001903BC /* KVGStroke.m in Sources */,
 				964F25E618C491100041F2BD /* DSCharacterView.m in Sources */,
 				966F4DBA18B5FCC2004EC50C /* DSViewController.m in Sources */,
+				961AE5181902681D001903BC /* KVGRepository.m in Sources */,
 				966F4DB118B5FCC2004EC50C /* DSAppDelegate.m in Sources */,
 				9690EDCB18C9C56F008FE980 /* DSCharacterCanvas.m in Sources */,
-				962C744F18C1F98E0000501A /* KVGElement.m in Sources */,
+				961AE5151902681D001903BC /* KVGCharacter.m in Sources */,
+				961AE5171902681D001903BC /* KVGModel.xcdatamodeld in Sources */,
 				9612A4DD18D1A05D0044BD6B /* KVGModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -815,6 +819,16 @@
 				9612A4DC18D1A05D0044BD6B /* KVGModel.xcdatamodel */,
 			);
 			currentVersion = 9612A4DC18D1A05D0044BD6B /* KVGModel.xcdatamodel */;
+			path = KVGModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		961AE50F1902681D001903BC /* KVGModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				961AE5101902681D001903BC /* KVGModel.xcdatamodel */,
+			);
+			currentVersion = 961AE5101902681D001903BC /* KVGModel.xcdatamodel */;
 			path = KVGModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
