@@ -30,7 +30,7 @@
     
 //    DSStrokeSonifier *sonifier = [[DSStrokeSonifier alloc] init];
     
-    NSData * characterData = [KVGRepository characterDataFor:[@"選" characterAtIndex:0]];
+    NSData * characterData = [KVGRepository downloadCharacterDataFor:[@"選" characterAtIndex:0]];
     KVGCharacter *character = [KVGCharacter characterFromSVGData:characterData];
     
     //self.kanjiView.inputCharacterDimensions = character.dimensions;

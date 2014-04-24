@@ -34,9 +34,15 @@
 
 + (KVGCharacter *)characterFromSVGData:(NSData *)data
 {
-    RXMLElement *rootNode = [RXMLElement elementFromXMLData:data];
+    KVGCharacter *character = nil;
     
-    return [[KVGCharacter alloc] initFromRXMLElement:rootNode];
+    if (data) {
+        RXMLElement *rootNode = [RXMLElement elementFromXMLData:data];
+        
+        character = [[KVGCharacter alloc] initFromRXMLElement:rootNode];
+    }
+    
+    return character;
 }
 
 - (id)initFromRXMLElement:(RXMLElement *)rootNode

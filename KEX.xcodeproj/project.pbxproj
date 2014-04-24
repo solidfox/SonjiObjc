@@ -29,9 +29,10 @@
 		9612A4DD18D1A05D0044BD6B /* KVGModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9612A4DB18D1A05D0044BD6B /* KVGModel.xcdatamodeld */; };
 		961AE5151902681D001903BC /* KVGCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 961AE50C1902681D001903BC /* KVGCharacter.m */; };
 		961AE5161902681D001903BC /* KVGElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 961AE50E1902681D001903BC /* KVGElement.m */; };
-		961AE5171902681D001903BC /* KVGModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 961AE50F1902681D001903BC /* KVGModel.xcdatamodeld */; };
 		961AE5181902681D001903BC /* KVGRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 961AE5121902681D001903BC /* KVGRepository.m */; };
 		961AE5191902681D001903BC /* KVGStroke.m in Sources */ = {isa = PBXBuildFile; fileRef = 961AE5141902681D001903BC /* KVGStroke.m */; };
+		961AE51F190269B8001903BC /* KVGCache.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 961AE51D190269B8001903BC /* KVGCache.xcdatamodeld */; };
+		961AE522190274E4001903BC /* KVGRawCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 961AE521190274E4001903BC /* KVGRawCharacter.m */; };
 		962EC57A19007D0800AED439 /* DSStrokeSonifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 962EC57819007D0800AED439 /* DSStrokeSonifier.m */; };
 		962EC57B19007D0800AED439 /* pitchedNoise.pd in Resources */ = {isa = PBXBuildFile; fileRef = 962EC57919007D0800AED439 /* pitchedNoise.pd */; };
 		962EC58919007F1400AED439 /* libpd-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 960C91B21900799100A3E9C3 /* libpd-ios.a */; };
@@ -119,11 +120,13 @@
 		961AE50C1902681D001903BC /* KVGCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVGCharacter.m; sourceTree = "<group>"; };
 		961AE50D1902681D001903BC /* KVGElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVGElement.h; sourceTree = "<group>"; };
 		961AE50E1902681D001903BC /* KVGElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVGElement.m; sourceTree = "<group>"; };
-		961AE5101902681D001903BC /* KVGModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KVGModel.xcdatamodel; sourceTree = "<group>"; };
 		961AE5111902681D001903BC /* KVGRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVGRepository.h; sourceTree = "<group>"; };
 		961AE5121902681D001903BC /* KVGRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVGRepository.m; sourceTree = "<group>"; };
 		961AE5131902681D001903BC /* KVGStroke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVGStroke.h; sourceTree = "<group>"; };
 		961AE5141902681D001903BC /* KVGStroke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVGStroke.m; sourceTree = "<group>"; };
+		961AE51E190269B8001903BC /* KVGCache.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KVGCache.xcdatamodel; sourceTree = "<group>"; };
+		961AE520190274E4001903BC /* KVGRawCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVGRawCharacter.h; sourceTree = "<group>"; };
+		961AE521190274E4001903BC /* KVGRawCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVGRawCharacter.m; sourceTree = "<group>"; };
 		962EC57719007D0800AED439 /* DSStrokeSonifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DSStrokeSonifier.h; path = Sonification/DSStrokeSonifier.h; sourceTree = "<group>"; };
 		962EC57819007D0800AED439 /* DSStrokeSonifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DSStrokeSonifier.m; path = Sonification/DSStrokeSonifier.m; sourceTree = "<group>"; };
 		962EC57919007D0800AED439 /* pitchedNoise.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = pitchedNoise.pd; path = Sonification/PureData/pitchedNoise.pd; sourceTree = "<group>"; };
@@ -215,11 +218,13 @@
 				961AE50C1902681D001903BC /* KVGCharacter.m */,
 				961AE50D1902681D001903BC /* KVGElement.h */,
 				961AE50E1902681D001903BC /* KVGElement.m */,
-				961AE50F1902681D001903BC /* KVGModel.xcdatamodeld */,
 				961AE5111902681D001903BC /* KVGRepository.h */,
 				961AE5121902681D001903BC /* KVGRepository.m */,
 				961AE5131902681D001903BC /* KVGStroke.h */,
 				961AE5141902681D001903BC /* KVGStroke.m */,
+				961AE51D190269B8001903BC /* KVGCache.xcdatamodeld */,
+				961AE520190274E4001903BC /* KVGRawCharacter.h */,
+				961AE521190274E4001903BC /* KVGRawCharacter.m */,
 			);
 			path = KVG;
 			sourceTree = "<group>";
@@ -539,13 +544,14 @@
 				966F4DAD18B5FCC2004EC50C /* main.m in Sources */,
 				961AE5161902681D001903BC /* KVGElement.m in Sources */,
 				961AE5191902681D001903BC /* KVGStroke.m in Sources */,
+				961AE522190274E4001903BC /* KVGRawCharacter.m in Sources */,
 				964F25E618C491100041F2BD /* DSCharacterView.m in Sources */,
 				966F4DBA18B5FCC2004EC50C /* DSViewController.m in Sources */,
 				961AE5181902681D001903BC /* KVGRepository.m in Sources */,
 				966F4DB118B5FCC2004EC50C /* DSAppDelegate.m in Sources */,
 				9690EDCB18C9C56F008FE980 /* DSCharacterCanvas.m in Sources */,
+				961AE51F190269B8001903BC /* KVGCache.xcdatamodeld in Sources */,
 				961AE5151902681D001903BC /* KVGCharacter.m in Sources */,
-				961AE5171902681D001903BC /* KVGModel.xcdatamodeld in Sources */,
 				9612A4DD18D1A05D0044BD6B /* KVGModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -782,6 +788,7 @@
 				961AE4F11900827C001903BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		966F4D9818B5FCC2004EC50C /* Build configuration list for PBXProject "KEX" */ = {
 			isa = XCConfigurationList;
@@ -823,13 +830,13 @@
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
-		961AE50F1902681D001903BC /* KVGModel.xcdatamodeld */ = {
+		961AE51D190269B8001903BC /* KVGCache.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				961AE5101902681D001903BC /* KVGModel.xcdatamodel */,
+				961AE51E190269B8001903BC /* KVGCache.xcdatamodel */,
 			);
-			currentVersion = 961AE5101902681D001903BC /* KVGModel.xcdatamodel */;
-			path = KVGModel.xcdatamodeld;
+			currentVersion = 961AE51E190269B8001903BC /* KVGCache.xcdatamodel */;
+			path = KVGCache.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
