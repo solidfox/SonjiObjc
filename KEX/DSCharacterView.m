@@ -37,12 +37,20 @@
 {
     [self.strokes addObject:path];
     self.numberOfStrokes++;
+    self.shownStrokes = self.numberOfStrokes;
     [self setNeedsDisplay];
+}
+
+- (void)removeStrokes
+{
+    self.strokes = nil;
+    self.shownStrokes = 0;
+    self.numberOfStrokes = 0;
 }
 
 - (void)setShownStrokes:(NSInteger)shownStrokes
 {
-    if (shownStrokes < self.numberOfStrokes && shownStrokes >= 0) {
+    if (shownStrokes <= self.numberOfStrokes && shownStrokes >= 0) {
         _shownStrokes = shownStrokes;
     }
     [self setNeedsDisplay];
@@ -58,7 +66,7 @@
     [[UIColor blackColor] setStroke];
     
     for (UIBezierPath *stroke in self.strokes) {
-        if ([self.strokes indexOfObject:stroke] <= self.shownStrokes) {
+        if ([self.strokes indexOfObject:stroke] < self.shownStrokes) {
             [stroke stroke];
         }
     }

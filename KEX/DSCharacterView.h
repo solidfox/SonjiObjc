@@ -17,6 +17,7 @@
 @property (nonatomic) NSInteger shownStrokes;
 
 - (void)addStroke:(UIBezierPath *)path;
+- (void)removeStrokes;
 
 
 @end
