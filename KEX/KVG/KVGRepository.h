@@ -15,19 +15,45 @@
 + (NSString *)repositoryURLFor:(unichar)unicodeCharacter;
 
 /**
- Gets a KVGCharacter object for the given character from the cache or, if the cache does not have the character, from the github repository.
+ *  Use this to download the Kanji VG XML data of a given character from the online repository. Will block until done.
+ *
+ *  @param unicodeCharacter The unicode character for which to download the XML data.
+ *
+ *  @return Returns an NSData object containing the XML Data for the given character downloaded repository.
  */
 + (NSData *)downloadCharacterDataFor:(unichar)unicodeCharacter;
 
+/**
+ *  Loads KVGCharacter objects from the local cache or fetches them from the online repository to the local cache and to memory.
+ *
+ *  @param character         The unicode character for which to load the KVGCharacter object.
+ *  @param completionHandler The block to execute upon completion. Will be executed on the main queue. //TODO is this wise?
+ */
 - (void)loadCharacterDataFor:(unichar)character completionHandler:(void (^)(BOOL success))completionHandler;
 
-// Designated initializer
-- (id)initWithLocalCacheURL:(NSURL *)localCacheURL;
-- (id)initWithDefaultLocalCacheURL;
+/**
+ *  Use this to get the KVGCharacter object for characters that have already been loaded.
+ *
+ *  @param character The unicode character of the desired KVGCharacter object.
+ *
+ *  @return Returns the KVGCharacter object for the given character provided that it has already been loaded into memory. Otherwise returns nil.
+ */
+- (KVGCharacter *)KVGCharacterFor:(unichar)character;
 
 /**
- Asynchronously caches the characters in the given string from the KanjiVG git hub repository for fast access through getKVGCharacterFor. Will skip those already cached. getKVGCharacterFor will still work for uncached characters but may block the main thread while trying to download the character.
+ *  Use this to initialize a new cached KVGRepository with its local cache file in the URL of your choice.
+ *
+ *  @param localCacheURL The URL at which to create the local cache file.
+ *
+ *  @return the initialized KVGRepository.
  */
-//- (NSArray *)cacheCharacters:(NSString *)characterString;
+- (id)initWithLocalCacheURL:(NSURL *)localCacheURL;
+
+/**
+ *  Use this to initialize a new cached KVGRepository with its local cache file in the default URL.
+ *
+ *  @return the initialized KVGRepository.
+ */
+- (id)initWithDefaultLocalCacheURL;
 
 @end

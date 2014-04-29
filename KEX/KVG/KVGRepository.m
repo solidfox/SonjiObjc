@@ -48,7 +48,7 @@
 
 - (id)initWithDefaultLocalCacheURL
 {
-    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSFileManager *fileManager = [[NSFileManager alloc] init];
     NSURL *documentsDirectory = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] firstObject];
     NSString *cacheDBName = @"KVGCache";
     NSURL *url = [documentsDirectory URLByAppendingPathComponent:cacheDBName];
@@ -63,7 +63,10 @@
         
         NSManagedObjectContext *context = self.document.managedObjectContext;
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"KVGRawCharacter"];
-        request.predicate = [NSPredicate predicateWithFormat:@"unicodeCharacter = %u", character];
+        
+        NSString *predicateString = [NSString stringWithFormat:@"unicodeCharacter = \"%C\"", character];
+        
+        request.predicate = [NSPredicate predicateWithFormat:predicateString];
         
         NSError *error;
         NSArray *results = [context executeFetchRequest:request error:&error];
@@ -78,17 +81,17 @@
             [self insertKVGRawCharacterFor:character withData:xmlCharacterData];
             
             kvgCharacter = [KVGCharacter characterFromSVGData:xmlCharacterData];
-            self.loadedCharacters[[NSString stringWithFormat:@"%u", character]] = kvgCharacter;
+            self.loadedCharacters[[NSString stringWithFormat:@"%C", character]] = kvgCharacter;
         } else {
             if ([results count] > 1) {
-                NSLog(@"WEIRD! Fetched %i results from database for character %u.", [results count], character);
+                NSLog(@"WEIRD! Fetched %i results from database for character %C.", [results count], character);
             }
             KVGRawCharacter *rawCharacter = [results objectAtIndex:0];
             kvgCharacter = [KVGCharacter characterFromSVGData:rawCharacter.xmlData];
         }
         
         if (kvgCharacter) {
-            self.loadedCharacters[[NSString stringWithFormat:@"%u", character]] = kvgCharacter;
+            self.loadedCharacters[[NSString stringWithFormat:@"%C", character]] = kvgCharacter;
             dispatch_async(dispatch_get_main_queue(), ^{
                 completionHandler(YES);
             });
@@ -106,15 +109,16 @@
 - (KVGRawCharacter *)insertKVGRawCharacterFor:(unichar)character withData:(NSData *)XMLData
 {
     KVGRawCharacter *rawCharacter = [NSEntityDescription insertNewObjectForEntityForName:@"KVGRawCharacter" inManagedObjectContext:self.document.managedObjectContext];
-    rawCharacter.unicodeCharacter = [NSString stringWithFormat:@"%u", character];
+    rawCharacter.unicodeCharacter = [NSString stringWithFormat:@"%C", character];
     rawCharacter.xmlData = XMLData;
+    [self saveDocument];
     return rawCharacter;
 }
 
 - (KVGCharacter *)KVGCharacterFor:(unichar)character
 {
     
-    KVGCharacter *KVGCharacter = [self.loadedCharacters objectForKey:[NSString stringWithFormat:@"%u", character]];
+    KVGCharacter *KVGCharacter = [self.loadedCharacters objectForKey:[NSString stringWithFormat:@"%C", character]];
     
     if (!KVGCharacter) {
         dispatch_semaphore_t sema = dispatch_semaphore_create(0);
@@ -122,16 +126,16 @@
             dispatch_semaphore_signal(sema);
         }];
         dispatch_semaphore_wait(sema, dispatch_time(DISPATCH_TIME_NOW, 5 * NSEC_PER_SEC));
+        
+        KVGCharacter = [self.loadedCharacters objectForKey:[NSString stringWithFormat:@"%C", character]];
     }
-    
-    KVGCharacter = [self.loadedCharacters objectForKey:[NSString stringWithFormat:@"%u", character]];
     
     return KVGCharacter;
 }
 
 - (BOOL)characterIsReady:(unichar)character
 {
-    return [self.loadedCharacters objectForKey:[NSString stringWithFormat:@"%u", character]] != nil;
+    return [self.loadedCharacters objectForKey:[NSString stringWithFormat:@"%C", character]] != nil;
 }
 
 
@@ -168,6 +172,22 @@
 - (void)documentFailedToOpen
 {
     
+}
+
+-(void)saveDocument
+{
+    [self.document saveToURL:self.document.fileURL
+            forSaveOperation:UIDocumentSaveForOverwriting
+           completionHandler:^(BOOL success) {    }];
+}
+
+- (NSMutableDictionary *)loadedCharacters
+{
+    if (!_loadedCharacters) {
+        _loadedCharacters = [[NSMutableDictionary alloc] init];
+    }
+    
+    return _loadedCharacters;
 }
 
 @end
