@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "KVGConstants.h"
 #import <UIKit/UIKit.h>
 #import "RXMLElement.h"
 #import <CoreData/CoreData.h>

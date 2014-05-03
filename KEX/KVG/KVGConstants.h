@@ -1,0 +1,2 @@
+
+extern CGSize const KVGCharacterSize;

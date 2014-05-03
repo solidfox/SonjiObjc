@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "KVGConstants.h"
 #import <CoreData/CoreData.h>
 #import "KVGCharacter.h"
 

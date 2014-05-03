@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "KVGConstants.h"
 #import "RXMLElement.h"
 #import "KVGStroke.h"
 

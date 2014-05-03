@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "KVGConstants.h"
 #import "KVGElement.h"
 #import <UIKit/UIKit.h>
 
