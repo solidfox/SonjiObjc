@@ -12,4 +12,6 @@
 
 @property (nonatomic)CGPoint currentPosition;
 
+- (void)turnOff;
+
 @end

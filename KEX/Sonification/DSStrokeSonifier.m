@@ -8,12 +8,14 @@
 
 #import "DSStrokeSonifier.h"
 #import "PdAudioController.h"
+#import "PdDispatcher.h"
 #import "PdBase.h"
 
 @interface DSStrokeSonifier ()
 
-@property (strong, nonatomic)PdAudioController *audioController;
-@property (nonatomic)void *patch;
+@property (strong, nonatomic) PdAudioController *audioController;
+@property (strong, nonatomic) PdDispatcher *dispatcher;
+@property (nonatomic) void *patch;
 
 @end
 
@@ -24,9 +26,14 @@
     self = [super init];
     self.patch = [PdBase openFile:@"pitchedNoise.pd"
                              path:[[NSBundle mainBundle] resourcePath]];
+    self.dispatcher = [[PdDispatcher alloc] init];
+    [PdBase setDelegate:self.dispatcher];
     if (!self.patch) {
         NSLog(@"Failed to open patch!"); // Gracefully handle failure...
     }
+    
+    self.audioController.active = YES;
+    
     return self;
 }
 
