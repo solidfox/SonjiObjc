@@ -10,6 +10,6 @@
 
 @interface UIBezierPath (Comparison)
 
--(CGFloat)compareTo:(UIBezierPath *)otherPath;
+- (CGFloat)compareTo:(UIBezierPath *)otherPath;
 
 @end
