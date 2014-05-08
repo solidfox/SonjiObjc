@@ -69,6 +69,7 @@
                     done[i] = YES;
                     nDone++;
                 } else {
+                    NSAssert(currentDistance != currentDistance + detail, @"Distance is improportionally large and unable to accomodate the detail. Either the distance between a point and the bezier is too large or the detail is too small or there's a bug in the binary search algorithm.");
                     nextDistance = (*pointDistance/2 + currentDistance/2);
                 }
             }
@@ -78,11 +79,11 @@
         CGPathRelease(shape);
     }
     
-    CGFloat summedDistance = 0.0;
+    CGFloat averageDistance = 0.0;
     for (int i = 0; i < nPoints; i++) {
-        summedDistance += distances[i];
+        averageDistance += distances[i] / nPoints;
     }
-    return summedDistance / nPoints;
+    return averageDistance;
 }
 
 @end
