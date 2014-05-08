@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#define KVG_CHARACTER_DIMENSION 109.0
-
 @interface DSCharacterView : UIView
 
 @property (nonatomic) CGSize inputCharacterDimensions;
@@ -17,7 +15,7 @@
 @property (nonatomic) NSInteger shownStrokes;
 
 - (void)addStroke:(UIBezierPath *)path;
+- (void)replaceStrokeWithStrokeOrder:(NSInteger)index withStroke:(UIBezierPath *)path;
 - (void)removeStrokes;
-
 
 @end

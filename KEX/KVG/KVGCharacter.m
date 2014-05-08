@@ -9,6 +9,7 @@
 #import "KVGCharacter.h"
 #import "RXMLElement.h"
 
+
 @interface KVGCharacter ()
 
 @property (nonatomic, readwrite) unichar character;
@@ -21,6 +22,11 @@
 - (NSArray *)strokes
 {
     return [self.element strokes];
+}
+
+- (KVGStroke *)strokeWithStrokeCount:(NSInteger)strokeCount
+{
+    return [self.strokes objectAtIndex:strokeCount - 1];
 }
 
 #pragma mark Initialization

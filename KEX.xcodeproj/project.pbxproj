@@ -53,7 +53,10 @@
 		966F4DC518B5FCC2004EC50C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966F4DA418B5FCC2004EC50C /* UIKit.framework */; };
 		966F4DCD18B5FCC2004EC50C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 966F4DCB18B5FCC2004EC50C /* InfoPlist.strings */; };
 		966F4DCF18B5FCC2004EC50C /* KEXTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 966F4DCE18B5FCC2004EC50C /* KEXTests.m */; };
-		9690EDCB18C9C56F008FE980 /* DSCharacterCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 9690EDCA18C9C56F008FE980 /* DSCharacterCanvas.m */; };
+		96B8D678191399E100BEC4BA /* UIBezierPath-Points.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B8D675191399E100BEC4BA /* UIBezierPath-Points.m */; };
+		96B8D679191399E200BEC4BA /* UIBezierPath+Comparison.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B8D677191399E100BEC4BA /* UIBezierPath+Comparison.m */; };
+		96B8D67F1914D66D00BEC4BA /* DSUserCharacterStroke.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B8D67E1914D66D00BEC4BA /* DSUserCharacterStroke.m */; };
+		96B8D6821914E56E00BEC4BA /* KVGConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B8D6811914E56E00BEC4BA /* KVGConstants.m */; };
 		96C5D2191909F198004D68FA /* KVGCache.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 961AE51D190269B8001903BC /* KVGCache.xcdatamodeld */; };
 		96C5D21B1909F1D3004D68FA /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96C5D21A1909F1D3004D68FA /* CoreData.framework */; };
 /* End PBXBuildFile section */
@@ -155,9 +158,15 @@
 		966F4DCC18B5FCC2004EC50C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		966F4DCE18B5FCC2004EC50C /* KEXTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KEXTests.m; sourceTree = "<group>"; };
 		9690EDBC18C73039008FE980 /* CMUnistrokeGestureRecognizer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CMUnistrokeGestureRecognizer.xcodeproj; path = "/Users/spike/Dropbox/Developer/iOS/Frameworks/CMUnistrokeGestureRecognizer-master/CMUnistrokeGestureRecognizer/CMUnistrokeGestureRecognizer.xcodeproj"; sourceTree = "<absolute>"; };
-		9690EDC918C9C56F008FE980 /* DSCharacterCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSCharacterCanvas.h; sourceTree = "<group>"; };
-		9690EDCA18C9C56F008FE980 /* DSCharacterCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSCharacterCanvas.m; sourceTree = "<group>"; };
 		9690EDCC18C9C5F7008FE980 /* libCMUnistrokeGestureRecognizer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCMUnistrokeGestureRecognizer.a; path = "../Frameworks/CMUnistrokeGestureRecognizer-master/CMUnistrokeGestureRecognizer/build/Debug-iphoneos/libCMUnistrokeGestureRecognizer.a"; sourceTree = "<group>"; };
+		96B8D674191399E100BEC4BA /* UIBezierPath-Points.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath-Points.h"; sourceTree = "<group>"; };
+		96B8D675191399E100BEC4BA /* UIBezierPath-Points.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath-Points.m"; sourceTree = "<group>"; };
+		96B8D676191399E100BEC4BA /* UIBezierPath+Comparison.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+Comparison.h"; sourceTree = "<group>"; };
+		96B8D677191399E100BEC4BA /* UIBezierPath+Comparison.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+Comparison.m"; sourceTree = "<group>"; };
+		96B8D67D1914D66D00BEC4BA /* DSUserCharacterStroke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSUserCharacterStroke.h; sourceTree = "<group>"; };
+		96B8D67E1914D66D00BEC4BA /* DSUserCharacterStroke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSUserCharacterStroke.m; sourceTree = "<group>"; };
+		96B8D6801914E56E00BEC4BA /* KVGConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVGConstants.h; sourceTree = "<group>"; };
+		96B8D6811914E56E00BEC4BA /* KVGConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVGConstants.m; sourceTree = "<group>"; };
 		96C5D21A1909F1D3004D68FA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E235C8E93EEA47598DDE60AD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		F81EB54718D34BA0B98EF3C1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,6 +225,8 @@
 		961AE50A1902681D001903BC /* KVG */ = {
 			isa = PBXGroup;
 			children = (
+				96B8D6801914E56E00BEC4BA /* KVGConstants.h */,
+				96B8D6811914E56E00BEC4BA /* KVGConstants.m */,
 				961AE50B1902681D001903BC /* KVGCharacter.h */,
 				961AE50C1902681D001903BC /* KVGCharacter.m */,
 				961AE50D1902681D001903BC /* KVGElement.h */,
@@ -292,14 +303,15 @@
 		966F4DA618B5FCC2004EC50C /* KEX */ = {
 			isa = PBXGroup;
 			children = (
+				96B8D67C191399ED00BEC4BA /* UIBezierPath */,
 				961AE50A1902681D001903BC /* KVG */,
 				962EC57619007CF300AED439 /* Sonification */,
 				960151A518BBB73D009046C9 /* 04e2d.svg */,
 				966F4DB218B5FCC2004EC50C /* Main_iPhone.storyboard */,
+				96B8D67D1914D66D00BEC4BA /* DSUserCharacterStroke.h */,
+				96B8D67E1914D66D00BEC4BA /* DSUserCharacterStroke.m */,
 				964F25E418C491100041F2BD /* DSCharacterView.h */,
 				964F25E518C491100041F2BD /* DSCharacterView.m */,
-				9690EDC918C9C56F008FE980 /* DSCharacterCanvas.h */,
-				9690EDCA18C9C56F008FE980 /* DSCharacterCanvas.m */,
 				966F4DB518B5FCC2004EC50C /* Main_iPad.storyboard */,
 				966F4DB818B5FCC2004EC50C /* DSViewController.h */,
 				966F4DB918B5FCC2004EC50C /* DSViewController.m */,
@@ -343,6 +355,17 @@
 		9690EDBE18C73433008FE980 /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
+			sourceTree = "<group>";
+		};
+		96B8D67C191399ED00BEC4BA /* UIBezierPath */ = {
+			isa = PBXGroup;
+			children = (
+				96B8D674191399E100BEC4BA /* UIBezierPath-Points.h */,
+				96B8D675191399E100BEC4BA /* UIBezierPath-Points.m */,
+				96B8D676191399E100BEC4BA /* UIBezierPath+Comparison.h */,
+				96B8D677191399E100BEC4BA /* UIBezierPath+Comparison.m */,
+			);
+			name = UIBezierPath;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -547,13 +570,16 @@
 				966F4DAD18B5FCC2004EC50C /* main.m in Sources */,
 				961AE5161902681D001903BC /* KVGElement.m in Sources */,
 				961AE5191902681D001903BC /* KVGStroke.m in Sources */,
+				96B8D678191399E100BEC4BA /* UIBezierPath-Points.m in Sources */,
 				961AE522190274E4001903BC /* KVGRawCharacter.m in Sources */,
 				964F25E618C491100041F2BD /* DSCharacterView.m in Sources */,
 				966F4DBA18B5FCC2004EC50C /* DSViewController.m in Sources */,
+				96B8D67F1914D66D00BEC4BA /* DSUserCharacterStroke.m in Sources */,
 				961AE5181902681D001903BC /* KVGRepository.m in Sources */,
 				966F4DB118B5FCC2004EC50C /* DSAppDelegate.m in Sources */,
-				9690EDCB18C9C56F008FE980 /* DSCharacterCanvas.m in Sources */,
+				96B8D679191399E200BEC4BA /* UIBezierPath+Comparison.m in Sources */,
 				961AE51F190269B8001903BC /* KVGCache.xcdatamodeld in Sources */,
+				96B8D6821914E56E00BEC4BA /* KVGConstants.m in Sources */,
 				961AE5151902681D001903BC /* KVGCharacter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

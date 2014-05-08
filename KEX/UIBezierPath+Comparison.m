@@ -63,14 +63,15 @@
                     }
                 } else if (*pointDistance == CGFLOAT_MAX) {
                     nextDistance = currentDistance * 2;
-                } else if (*pointDistance < currentDistance + detail) {
+                } else if (*pointDistance <= currentDistance + detail) {
                     done[i] = YES;
                     nDone++;
                 } else {
-                    nextDistance = (*pointDistance + currentDistance) / 2;
+                    nextDistance = (*pointDistance/2 + currentDistance/2);
                 }
             }
         }
+        NSAssert(currentDistance != nextDistance, @"Current distance was equal to next distance: %f", currentDistance);
         currentDistance = nextDistance;
     }
     

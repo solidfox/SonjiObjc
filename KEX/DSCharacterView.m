@@ -41,6 +41,14 @@
     [self setNeedsDisplay];
 }
 
+- (void)replaceStrokeWithStrokeOrder:(NSInteger)index withStroke:(UIBezierPath *)path
+{
+    NSAssert(index <= self.numberOfStrokes && index > 0, @"Tried to replace stroke that didn't exist. numberOfStrokes: %i, index to replace: %i", self.numberOfStrokes, index);
+    
+    [self.strokes replaceObjectAtIndex:index - 1 withObject:path];
+    [self setNeedsDisplay];
+}
+
 - (void)removeStrokes
 {
     self.strokes = nil;
@@ -76,7 +84,7 @@
 
 - (void)setup
 {
-    _inputCharacterDimensions = CGSizeMake(KVG_CHARACTER_DIMENSION, KVG_CHARACTER_DIMENSION);
+    _inputCharacterDimensions = self.frame.size;
 }
 
 - (void)awakeFromNib
