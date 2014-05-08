@@ -50,4 +50,15 @@
     return _audioController;
 }
 
+- (void)setCurrentPosition:(CGPoint)currentPosition
+{
+    [PdBase sendFloat:currentPosition.x toReceiver:@"noisePitch"];
+    [PdBase sendBangToReceiver:@"turnOn"];
+}
+
+- (void)turnOff
+{
+    [PdBase sendBangToReceiver:@"turnOff"];
+}
+
 @end
