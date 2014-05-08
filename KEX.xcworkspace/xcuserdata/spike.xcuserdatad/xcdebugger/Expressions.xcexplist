@@ -6,7 +6,16 @@
          contextName = "-[UIBezierPath(Comparison) averageDistanceToPoints:withDetail:]:UIBezierPath+Comparison.m">
          <PersistentStrings>
             <PersistentString
-               value = "done[i]">
+               value = "[UIBezierPath bezierPathWithCGPath:shape]">
+            </PersistentString>
+            <PersistentString
+               value = "*pointDistance &lt;= currentDistance + detail">
+            </PersistentString>
+            <PersistentString
+               value = "nextDistance">
+            </PersistentString>
+            <PersistentString
+               value = "point">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -20,6 +29,9 @@
                value = "self.document">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[DSViewController gradeUserStroke]:DSViewController.m">
       </ContextState>
       <ContextState
          contextName = "-[DSViewController viewDidLoad]:DSViewController.m">
