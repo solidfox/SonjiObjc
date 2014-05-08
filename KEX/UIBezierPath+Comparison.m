@@ -36,17 +36,19 @@
     BOOL        done[nPoints];       memset(done, 0, sizeof(done));
     int         nDone                       = 0;
     
+    CGPathRef shape;
     
     while (nDone < nPoints) {
         CGFloat nextDistance = currentDistance / 2;
         int i = -1;
         int containedPoints = 0;
-        CGPathRef shape = CGPathCreateCopyByStrokingPath(self.CGPath,
-                                                         NULL,
-                                                         currentDistance,
-                                                         kCGLineCapRound,
-                                                         kCGLineJoinMiter,
-                                                         currentDistance);
+        shape = CGPathCreateCopyByStrokingPath(  self.CGPath,
+                                                 NULL,
+                                                 currentDistance,
+                                                 kCGLineCapRound,
+                                                 kCGLineJoinMiter,
+                                                 currentDistance
+                                               );
         
         for (NSValue *pointValue in points)
         {
@@ -73,6 +75,7 @@
         }
         NSAssert(currentDistance != nextDistance, @"Current distance was equal to next distance: %f", currentDistance);
         currentDistance = nextDistance;
+        CGPathRelease(shape);
     }
     
     CGFloat summedDistance = 0.0;
