@@ -21,7 +21,8 @@
 + (NSString *)repositoryURLFor:(unichar)unicodeCharacter
 {
     NSString *characterFilename = [NSString stringWithFormat:@"%x", unicodeCharacter];
-    int prefixZeroes = 5-[characterFilename length];
+    NSAssert([characterFilename length] <= 5, @"Generated kanji filename was longer than expected (5 characters): %@", characterFilename);
+    NSUInteger prefixZeroes = 5-[characterFilename length];
     NSString *prefix = [@"" stringByPaddingToLength:prefixZeroes withString:@"0" startingAtIndex:0];
     characterFilename = [prefix stringByAppendingFormat:@"%@.svg", characterFilename];
     return [@"https://raw.github.com/KanjiVG/kanjivg/master/kanji/" stringByAppendingString:characterFilename];
@@ -81,11 +82,8 @@
             [self insertKVGRawCharacterFor:character withData:xmlCharacterData];
             
             kvgCharacter = [KVGCharacter characterFromSVGData:xmlCharacterData];
-            self.loadedCharacters[[NSString stringWithFormat:@"%C", character]] = kvgCharacter;
         } else {
-            if ([results count] > 1) {
-                NSLog(@"WEIRD! Fetched %i results from database for character %C.", [results count], character);
-            }
+            NSAssert([results count] == 1, @"Fetched %lui results from database for character %C. Character property should be unique!", [results count], character);
             KVGRawCharacter *rawCharacter = [results objectAtIndex:0];
             kvgCharacter = [KVGCharacter characterFromSVGData:rawCharacter.xmlData];
         }
@@ -121,6 +119,7 @@
     KVGCharacter *KVGCharacter = [self.loadedCharacters objectForKey:[NSString stringWithFormat:@"%C", character]];
     
     if (!KVGCharacter) {
+        NSLog(@"Character %u was not loaded when requested. This is probably not good at all!", character);
         dispatch_semaphore_t sema = dispatch_semaphore_create(0);
         [self loadCharacterDataFor:character completionHandler:^(BOOL success) {
             dispatch_semaphore_signal(sema);
@@ -166,7 +165,7 @@
 
 - (void)documentReady
 {
-    
+    NSAssert(self.document.documentState == UIDocumentStateNormal, @"Document seems to have failed to open/create!");
 }
 
 - (void)documentFailedToOpen

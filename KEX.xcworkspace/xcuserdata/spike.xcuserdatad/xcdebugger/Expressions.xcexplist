@@ -3,6 +3,72 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[DSViewController gradeUserStroke]:DSViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[KVGRepository saveDocument]:KVGRepository.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.document">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[DSStrokeSonifier playNotesForPosition:]:DSStrokeSonifier.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.horizontalNotes">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__56-[KVGRepository loadCharacterDataFor:completionHandler:]_block_invoke:KVGRepository.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[DSViewController viewDidLayoutSubviews]:DSViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.userKanjiView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[DSViewController viewDidLoad]:DSViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[character strokes]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "+[KVGCharacter characterFromRXMLElement:inManagedObjectContext:]:KVGCharacter.m">
+      </ContextState>
+      <ContextState
+         contextName = "+[KVGCharacter characterFromSVGData:inManagedObjectContext:]:KVGCharacter.m">
+      </ContextState>
+      <ContextState
+         contextName = "+[KVGElement elementFromRXML:inManagedObjectContext:]:KVGElement.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[KVGRepository insertKVGRawCharacterFor:withData:]:KVGRepository.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "rawCharacter.unicodeCharacter">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[DSStrokeSonifier setCurrentPosition:]:DSStrokeSonifier.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[KVGRepository documentReady]:KVGRepository.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.document.documentState">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[UIBezierPath(Comparison) averageDistanceToPoints:withDetail:]:UIBezierPath+Comparison.m">
          <PersistentStrings>
             <PersistentString
@@ -16,53 +82,6 @@
             </PersistentString>
             <PersistentString
                value = "point">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "__56-[KVGRepository loadCharacterDataFor:completionHandler:]_block_invoke:KVGRepository.m">
-      </ContextState>
-      <ContextState
-         contextName = "-[KVGRepository saveDocument]:KVGRepository.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.document">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[DSViewController gradeUserStroke]:DSViewController.m">
-      </ContextState>
-      <ContextState
-         contextName = "-[DSViewController viewDidLoad]:DSViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "[character strokes]">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[KVGRepository documentReady]:KVGRepository.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.document.documentState">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "+[KVGCharacter characterFromSVGData:inManagedObjectContext:]:KVGCharacter.m">
-      </ContextState>
-      <ContextState
-         contextName = "+[KVGCharacter characterFromRXMLElement:inManagedObjectContext:]:KVGCharacter.m">
-      </ContextState>
-      <ContextState
-         contextName = "+[KVGElement elementFromRXML:inManagedObjectContext:]:KVGElement.m">
-      </ContextState>
-      <ContextState
-         contextName = "-[KVGRepository insertKVGRawCharacterFor:withData:]:KVGRepository.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "rawCharacter.unicodeCharacter">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

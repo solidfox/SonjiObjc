@@ -10,8 +10,13 @@
 
 @interface DSStrokeSonifier : NSObject
 
-@property (nonatomic)CGPoint currentPosition;
+@property (nonatomic) CGPoint currentPosition;
+@property (nonatomic) CGPoint currentVelocity;
+@property (nonatomic) CGRect bounds;
 
+- (id)initWithFrame:(CGRect)frame;
+
+- (void)turnOn;
 - (void)turnOff;
 
 @end

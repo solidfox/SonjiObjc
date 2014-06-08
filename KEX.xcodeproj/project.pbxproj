@@ -37,7 +37,12 @@
 		962EC58919007F1400AED439 /* libpd-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 960C91B21900799100A3E9C3 /* libpd-ios.a */; };
 		962EC58B19007F2300AED439 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 962EC58A19007F2300AED439 /* AudioToolbox.framework */; };
 		962EC58D19007F3000AED439 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 962EC58C19007F3000AED439 /* AVFoundation.framework */; };
+		9643C085192CEACB00F50707 /* DSNotePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9643C084192CEACB00F50707 /* DSNotePlayer.m */; };
+		9643C089192DE71500F50707 /* Harp in Resources */ = {isa = PBXBuildFile; fileRef = 9643C088192DE71500F50707 /* Harp */; };
 		964F25E618C491100041F2BD /* DSCharacterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 964F25E518C491100041F2BD /* DSCharacterView.m */; };
+		96576A2219210E5F006CCD78 /* KEXBrowsingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96576A2119210E5F006CCD78 /* KEXBrowsingTableViewController.m */; };
+		96576A241924C31E006CCD78 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 96576A231924C31E006CCD78 /* Podfile */; };
+		965DB7211924F7660038B2EB /* pink~.pd in Resources */ = {isa = PBXBuildFile; fileRef = 965DB7201924F7660038B2EB /* pink~.pd */; };
 		966F4DA118B5FCC2004EC50C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966F4DA018B5FCC2004EC50C /* Foundation.framework */; };
 		966F4DA318B5FCC2004EC50C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966F4DA218B5FCC2004EC50C /* CoreGraphics.framework */; };
 		966F4DA518B5FCC2004EC50C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966F4DA418B5FCC2004EC50C /* UIKit.framework */; };
@@ -46,7 +51,7 @@
 		966F4DB118B5FCC2004EC50C /* DSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 966F4DB018B5FCC2004EC50C /* DSAppDelegate.m */; };
 		966F4DB418B5FCC2004EC50C /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 966F4DB218B5FCC2004EC50C /* Main_iPhone.storyboard */; };
 		966F4DB718B5FCC2004EC50C /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 966F4DB518B5FCC2004EC50C /* Main_iPad.storyboard */; };
-		966F4DBA18B5FCC2004EC50C /* DSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966F4DB918B5FCC2004EC50C /* DSViewController.m */; };
+		966F4DBA18B5FCC2004EC50C /* KEXLearningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966F4DB918B5FCC2004EC50C /* KEXLearningViewController.m */; };
 		966F4DBC18B5FCC2004EC50C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 966F4DBB18B5FCC2004EC50C /* Images.xcassets */; };
 		966F4DC318B5FCC2004EC50C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966F4DC218B5FCC2004EC50C /* XCTest.framework */; };
 		966F4DC418B5FCC2004EC50C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966F4DA018B5FCC2004EC50C /* Foundation.framework */; };
@@ -116,7 +121,7 @@
 /* Begin PBXFileReference section */
 		960151A118BBB679009046C9 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		960151A318BBB687009046C9 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		960151A518BBB73D009046C9 /* 04e2d.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = 04e2d.svg; sourceTree = "<group>"; };
+		960151A518BBB73D009046C9 /* 04e2d.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = 04e2d.svg; path = ../04e2d.svg; sourceTree = "<group>"; };
 		960C91AC1900799100A3E9C3 /* libpd.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpd.xcodeproj; path = Frameworks/libpd/libpd.xcodeproj; sourceTree = "<group>"; };
 		96124CD018CC777E0044BD6B /* CMUnistrokeGestureRecognizer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CMUnistrokeGestureRecognizer.xcodeproj; path = ../Frameworks/CMUnistrokeRecognizer/CMUnistrokeGestureRecognizer/CMUnistrokeGestureRecognizer.xcodeproj; sourceTree = "<group>"; };
 		961AE50B1902681D001903BC /* KVGCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVGCharacter.h; sourceTree = "<group>"; };
@@ -135,8 +140,15 @@
 		962EC57919007D0800AED439 /* pitchedNoise.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = pitchedNoise.pd; path = Sonification/PureData/pitchedNoise.pd; sourceTree = "<group>"; };
 		962EC58A19007F2300AED439 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		962EC58C19007F3000AED439 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9643C083192CEACB00F50707 /* DSNotePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DSNotePlayer.h; path = Sonification/DSNotePlayer.h; sourceTree = "<group>"; };
+		9643C084192CEACB00F50707 /* DSNotePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DSNotePlayer.m; path = Sonification/DSNotePlayer.m; sourceTree = "<group>"; };
+		9643C088192DE71500F50707 /* Harp */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Harp; path = Sonification/Harp; sourceTree = "<group>"; };
 		964F25E418C491100041F2BD /* DSCharacterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSCharacterView.h; sourceTree = "<group>"; };
 		964F25E518C491100041F2BD /* DSCharacterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSCharacterView.m; sourceTree = "<group>"; };
+		96576A2019210E5F006CCD78 /* KEXBrowsingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KEXBrowsingTableViewController.h; path = Browsing/KEXBrowsingTableViewController.h; sourceTree = "<group>"; };
+		96576A2119210E5F006CCD78 /* KEXBrowsingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KEXBrowsingTableViewController.m; path = Browsing/KEXBrowsingTableViewController.m; sourceTree = "<group>"; };
+		96576A231924C31E006CCD78 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		965DB7201924F7660038B2EB /* pink~.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "pink~.pd"; path = "Sonification/PureData/pink~.pd"; sourceTree = "<group>"; };
 		966F4D9D18B5FCC2004EC50C /* KEX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KEX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		966F4DA018B5FCC2004EC50C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		966F4DA218B5FCC2004EC50C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -149,8 +161,8 @@
 		966F4DB018B5FCC2004EC50C /* DSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSAppDelegate.m; sourceTree = "<group>"; };
 		966F4DB318B5FCC2004EC50C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		966F4DB618B5FCC2004EC50C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		966F4DB818B5FCC2004EC50C /* DSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSViewController.h; sourceTree = "<group>"; };
-		966F4DB918B5FCC2004EC50C /* DSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSViewController.m; sourceTree = "<group>"; };
+		966F4DB818B5FCC2004EC50C /* KEXLearningViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KEXLearningViewController.h; sourceTree = "<group>"; };
+		966F4DB918B5FCC2004EC50C /* KEXLearningViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KEXLearningViewController.m; sourceTree = "<group>"; };
 		966F4DBB18B5FCC2004EC50C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		966F4DC118B5FCC2004EC50C /* KEXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KEXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		966F4DC218B5FCC2004EC50C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -225,6 +237,7 @@
 		961AE50A1902681D001903BC /* KVG */ = {
 			isa = PBXGroup;
 			children = (
+				960151A518BBB73D009046C9 /* 04e2d.svg */,
 				96B8D6801914E56E00BEC4BA /* KVGConstants.h */,
 				96B8D6811914E56E00BEC4BA /* KVGConstants.m */,
 				961AE50B1902681D001903BC /* KVGCharacter.h */,
@@ -245,9 +258,12 @@
 		962EC57619007CF300AED439 /* Sonification */ = {
 			isa = PBXGroup;
 			children = (
-				962EC57C19007D1400AED439 /* PureData */,
+				9643C088192DE71500F50707 /* Harp */,
+				9643C083192CEACB00F50707 /* DSNotePlayer.h */,
+				9643C084192CEACB00F50707 /* DSNotePlayer.m */,
 				962EC57719007D0800AED439 /* DSStrokeSonifier.h */,
 				962EC57819007D0800AED439 /* DSStrokeSonifier.m */,
+				962EC57C19007D1400AED439 /* PureData */,
 			);
 			name = Sonification;
 			sourceTree = "<group>";
@@ -255,9 +271,33 @@
 		962EC57C19007D1400AED439 /* PureData */ = {
 			isa = PBXGroup;
 			children = (
+				965DB7201924F7660038B2EB /* pink~.pd */,
 				962EC57919007D0800AED439 /* pitchedNoise.pd */,
 			);
 			name = PureData;
+			sourceTree = "<group>";
+		};
+		96576A1919210163006CCD78 /* Learning interface */ = {
+			isa = PBXGroup;
+			children = (
+				962EC57619007CF300AED439 /* Sonification */,
+				96B8D67D1914D66D00BEC4BA /* DSUserCharacterStroke.h */,
+				96B8D67E1914D66D00BEC4BA /* DSUserCharacterStroke.m */,
+				964F25E418C491100041F2BD /* DSCharacterView.h */,
+				964F25E518C491100041F2BD /* DSCharacterView.m */,
+				966F4DB818B5FCC2004EC50C /* KEXLearningViewController.h */,
+				966F4DB918B5FCC2004EC50C /* KEXLearningViewController.m */,
+			);
+			name = "Learning interface";
+			sourceTree = "<group>";
+		};
+		96576A1C19210455006CCD78 /* Browsing interface */ = {
+			isa = PBXGroup;
+			children = (
+				96576A2019210E5F006CCD78 /* KEXBrowsingTableViewController.h */,
+				96576A2119210E5F006CCD78 /* KEXBrowsingTableViewController.m */,
+			);
+			name = "Browsing interface";
 			sourceTree = "<group>";
 		};
 		966F4D9418B5FCC2004EC50C = {
@@ -303,20 +343,13 @@
 		966F4DA618B5FCC2004EC50C /* KEX */ = {
 			isa = PBXGroup;
 			children = (
+				966F4DB218B5FCC2004EC50C /* Main_iPhone.storyboard */,
 				96B8D67C191399ED00BEC4BA /* UIBezierPath */,
 				961AE50A1902681D001903BC /* KVG */,
-				962EC57619007CF300AED439 /* Sonification */,
-				960151A518BBB73D009046C9 /* 04e2d.svg */,
-				966F4DB218B5FCC2004EC50C /* Main_iPhone.storyboard */,
-				96B8D67D1914D66D00BEC4BA /* DSUserCharacterStroke.h */,
-				96B8D67E1914D66D00BEC4BA /* DSUserCharacterStroke.m */,
-				964F25E418C491100041F2BD /* DSCharacterView.h */,
-				964F25E518C491100041F2BD /* DSCharacterView.m */,
-				966F4DB518B5FCC2004EC50C /* Main_iPad.storyboard */,
-				966F4DB818B5FCC2004EC50C /* DSViewController.h */,
-				966F4DB918B5FCC2004EC50C /* DSViewController.m */,
+				96576A1919210163006CCD78 /* Learning interface */,
 				966F4DBB18B5FCC2004EC50C /* Images.xcassets */,
 				966F4DA718B5FCC2004EC50C /* Supporting Files */,
+				96576A1C19210455006CCD78 /* Browsing interface */,
 			);
 			path = KEX;
 			sourceTree = "<group>";
@@ -324,6 +357,8 @@
 		966F4DA718B5FCC2004EC50C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				96576A231924C31E006CCD78 /* Podfile */,
+				966F4DB518B5FCC2004EC50C /* Main_iPad.storyboard */,
 				966F4DAF18B5FCC2004EC50C /* DSAppDelegate.h */,
 				966F4DB018B5FCC2004EC50C /* DSAppDelegate.m */,
 				966F4DA818B5FCC2004EC50C /* KEX-Info.plist */,
@@ -495,8 +530,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				965DB7211924F7660038B2EB /* pink~.pd in Resources */,
 				96C5D2191909F198004D68FA /* KVGCache.xcdatamodeld in Resources */,
 				962EC57B19007D0800AED439 /* pitchedNoise.pd in Resources */,
+				9643C089192DE71500F50707 /* Harp in Resources */,
+				96576A241924C31E006CCD78 /* Podfile in Resources */,
 				966F4DB718B5FCC2004EC50C /* Main_iPad.storyboard in Resources */,
 				966F4DBC18B5FCC2004EC50C /* Images.xcassets in Resources */,
 				966F4DB418B5FCC2004EC50C /* Main_iPhone.storyboard in Resources */,
@@ -567,15 +605,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				962EC57A19007D0800AED439 /* DSStrokeSonifier.m in Sources */,
+				9643C085192CEACB00F50707 /* DSNotePlayer.m in Sources */,
 				966F4DAD18B5FCC2004EC50C /* main.m in Sources */,
 				961AE5161902681D001903BC /* KVGElement.m in Sources */,
 				961AE5191902681D001903BC /* KVGStroke.m in Sources */,
 				96B8D678191399E100BEC4BA /* UIBezierPath-Points.m in Sources */,
 				961AE522190274E4001903BC /* KVGRawCharacter.m in Sources */,
 				964F25E618C491100041F2BD /* DSCharacterView.m in Sources */,
-				966F4DBA18B5FCC2004EC50C /* DSViewController.m in Sources */,
+				966F4DBA18B5FCC2004EC50C /* KEXLearningViewController.m in Sources */,
 				96B8D67F1914D66D00BEC4BA /* DSUserCharacterStroke.m in Sources */,
 				961AE5181902681D001903BC /* KVGRepository.m in Sources */,
+				96576A2219210E5F006CCD78 /* KEXBrowsingTableViewController.m in Sources */,
 				966F4DB118B5FCC2004EC50C /* DSAppDelegate.m in Sources */,
 				96B8D679191399E200BEC4BA /* UIBezierPath+Comparison.m in Sources */,
 				961AE51F190269B8001903BC /* KVGCache.xcdatamodeld in Sources */,

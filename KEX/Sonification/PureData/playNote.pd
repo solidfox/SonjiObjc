@@ -1,0 +1,25 @@
+#N canvas 593 192 450 300 10;
+#X obj 266 14 table wavFile;
+#X obj 54 96 soundfiler;
+#X obj 49 132 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 48 169 tabplay~ wavFile;
+#X obj 42 222 dac~;
+#X msg 53 66 read -resize HA_ES_mf_C5.wav wavFile;
+#X obj 208 205 pack read -resize filename wavFile;
+#X obj 196 166 makefilename HA_ES_mf_%s.wav;
+#X symbolatom 209 245 10 0 0 0 - - -;
+#X obj 220 138 list-l2s;
+#X obj 203 106 pack C 5;
+#X obj 165 97 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 271 106 C 5;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 0 4 1;
+#X connect 5 0 1 0;
+#X connect 6 0 8 0;
+#X connect 7 0 6 2;
+#X connect 9 0 7 0;
+#X connect 10 0 9 0;
+#X connect 12 0 9 0;

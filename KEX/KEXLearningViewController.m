@@ -6,21 +6,24 @@
 //  Copyright (c) 2014 Daniel Schlaug. All rights reserved.
 //
 
-#import "DSViewController.h"
+#import "KEXLearningViewController.h"
 #import "KVGCharacter.h"
 #import "DSCharacterView.h"
 #import "KVGRepository.h"
 #import "DSStrokeSonifier.h"
 #import "DSUserCharacterStroke.h"
+#import "UIBezierPath-Points.h"
 
 
-@interface DSViewController ()
+@interface KEXLearningViewController ()
 
 @property (weak, nonatomic) IBOutlet DSCharacterView *desiredKanjiView;
 @property (strong, nonatomic) DSCharacterView *userKanjiView;
 @property (weak, nonatomic) IBOutlet UISlider *strokesSlider;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *velocityLabel;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *kanjiButtons;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *pointDisplay;
 
 @property (strong, nonatomic) KVGRepository *kanjiRepo;
 
@@ -33,13 +36,11 @@
 
 @end
 
-@implementation DSViewController
+@implementation KEXLearningViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.sonifier = [[DSStrokeSonifier alloc] init];
     
     self.userKanjiView = [[DSCharacterView alloc] initWithFrame:self.desiredKanjiView.frame];
     self.kanjiRepo = [[KVGRepository alloc] initWithDefaultLocalCacheURL];
@@ -50,7 +51,7 @@
     
     for (UIButton *button in self.kanjiButtons) {
         unichar character = [[button titleForState:UIControlStateNormal] characterAtIndex:0];
-        [self.kanjiRepo loadCharacterDataFor:character completionHandler:^(BOOL success){}];
+        [self.kanjiRepo loadCharacterDataFor:character completionHandler:^(BOOL success){NSLog(@"Loaded character: %u", character);}];
     }
     
     NSAssert(self.nSuccessfulUserStrokes == 0, @"Weird initialization of nSuccessfulUserStrokes");
@@ -59,6 +60,8 @@
 - (void)viewDidLayoutSubviews
 {
     self.userKanjiView.frame = self.desiredKanjiView.frame;
+    
+    self.sonifier = [[DSStrokeSonifier alloc] initWithFrame:self.desiredKanjiView.frame];
 }
 
 - (void)setUserKanjiView:(DSCharacterView *)kanjiCanvas
@@ -71,6 +74,16 @@
 - (void)recognizedPan:(UIPanGestureRecognizer *)recognizer
 {
     CGPoint currentPosition = [recognizer locationInView:self.userKanjiView];
+    CGPoint currentVelocity = [recognizer velocityInView:self.userKanjiView];
+    
+    
+    CGFloat combinedVelocity = sqrt(currentVelocity.x * currentVelocity.x + currentVelocity.y * currentVelocity.y);
+    CGFloat volume = MIN(1, log(combinedVelocity/2)/log(700));
+    self.velocityLabel.text = [NSString stringWithFormat:@"%f", volume];
+    
+    self.sonifier.currentVelocity = currentVelocity;
+    self.sonifier.currentPosition = currentPosition;
+    
     NSUInteger desiredStrokeCount = [self desiredStrokeCount];
     
     if (recognizer.state == UIGestureRecognizerStateChanged) {
@@ -78,15 +91,11 @@
     } else if (recognizer.state == UIGestureRecognizerStateBegan) {
         self.userStroke = [[DSUserCharacterStroke alloc] initWithSize:self.desiredKanjiView.frame.size];
         [self.userStroke addPoint:currentPosition];
+        [self.sonifier turnOn];
     } else if (recognizer.state == UIGestureRecognizerStateEnded) {
-        [self.userStroke addPoint:currentPosition];
-    }
-    
-    if (recognizer.state == UIGestureRecognizerStateEnded) {
-        [self gradeUserStroke];
         [self.sonifier turnOff];
-    } else {
-        self.sonifier.currentPosition = currentPosition;
+        [self.userStroke addPoint:currentPosition];
+        [self gradeUserStroke];
     }
     
     if (self.userKanjiView.numberOfStrokes == desiredStrokeCount) {
@@ -98,17 +107,19 @@
 
 - (void)gradeUserStroke
 {
-    NSAssert(self.userStroke != nil, @"userStroke was nil!");
+    NSAssert(self.userStroke != nil, @"Could not grade user stroke as it was nil!");
     
-    CGFloat grade = [self.userStroke gradeWithDesiredStroke:self.desiredStroke];
-    
-    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %f", grade];
-    
-    if (grade < 15) {
-        self.scoreLabel.textColor = [UIColor greenColor];
-        self.nSuccessfulUserStrokes++;
-    } else {
-        self.scoreLabel.textColor = [UIColor redColor];
+    if (self.desiredStroke) {
+        CGFloat grade = [self.userStroke gradeWithDesiredStroke:self.desiredStroke];
+        
+        self.scoreLabel.text = [NSString stringWithFormat:@"Score: %f", grade];
+        
+        if (grade < 15) {
+            self.scoreLabel.textColor = [UIColor greenColor];
+            self.nSuccessfulUserStrokes++;
+        } else {
+            self.scoreLabel.textColor = [UIColor redColor];
+        }
     }
 }
 
@@ -122,6 +133,13 @@
     self.desiredKanjiView.shownStrokes = sender.value;
 }
 
+- (IBAction)traceStrokeSliderChanged:(UISlider *)sender {
+    CGPoint point = [self.desiredStroke.path pointAtPercent:sender.value withSlope:nil];
+    CGRect frame = self.pointDisplay.frame;
+    frame.origin = point;
+    self.pointDisplay.frame = frame;
+}
+
 - (IBAction)kanjiButtonPushed:(UIButton *)sender {
     unichar unicodeCharacter = [[sender titleForState:UIControlStateNormal] characterAtIndex:0];
     KVGCharacter *character = [self.kanjiRepo KVGCharacterFor:unicodeCharacter];
@@ -130,7 +148,15 @@
 
 - (KVGStroke *)desiredStroke
 {
-    return [self.desiredKanji strokeWithStrokeCount:[self desiredStrokeCount]];
+    _desiredStroke = nil;
+    
+    NSInteger desiredStrokeCount = [self desiredStrokeCount];
+    
+    if (desiredStrokeCount <= [self.desiredKanji.strokes count]) {
+        _desiredStroke = [self.desiredKanji strokeWithStrokeCount:[self desiredStrokeCount]];
+    }
+    
+    return _desiredStroke;
 }
 
 - (NSInteger)desiredStrokeCount

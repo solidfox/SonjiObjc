@@ -43,7 +43,7 @@
 
 - (void)replaceStrokeWithStrokeOrder:(NSInteger)index withStroke:(UIBezierPath *)path
 {
-    NSAssert(index <= self.numberOfStrokes && index > 0, @"Tried to replace stroke that didn't exist. numberOfStrokes: %i, index to replace: %i", self.numberOfStrokes, index);
+    NSAssert(index <= self.numberOfStrokes && index > 0, @"Tried to replace stroke that didn't exist. numberOfStrokes: %li, index to replace: %li", self.numberOfStrokes, index);
     
     [self.strokes replaceObjectAtIndex:index - 1 withObject:path];
     [self setNeedsDisplay];
