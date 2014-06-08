@@ -10,6 +10,8 @@
 #define VALUE(_INDEX_) [NSValue valueWithCGPoint:points[_INDEX_]]
 #define POINT(_INDEX_) [(NSValue *)[points objectAtIndex:_INDEX_] CGPointValue]
 
+const unsigned kSteps = 20;
+
 // Return distance between two points
 static float distance (CGPoint p1, CGPoint p2)
 {
@@ -20,6 +22,7 @@ static float distance (CGPoint p1, CGPoint p2)
 }
 
 @implementation UIBezierPath (Points)
+
 void getPointsFromBezier(void *info, const CGPathElement *element)
 {
     NSMutableArray *bezierPoints = (__bridge NSMutableArray *)info;
@@ -30,11 +33,76 @@ void getPointsFromBezier(void *info, const CGPathElement *element)
         if ((type == kCGPathElementAddLineToPoint) ||
             (type == kCGPathElementMoveToPoint))
             [bezierPoints addObject:VALUE(0)];
-        else if (type == kCGPathElementAddQuadCurveToPoint)
+        else if (type == kCGPathElementAddQuadCurveToPoint) {
             [bezierPoints addObject:VALUE(1)];
-        else if (type == kCGPathElementAddCurveToPoint)
-            [bezierPoints addObject:VALUE(2)];
+        }
+        else if (type == kCGPathElementAddCurveToPoint) {
+            CGPoint origin;
+            CGPoint originControl;
+            CGPoint destinationControl;
+            CGPoint destination;
+            [[bezierPoints lastObject] getValue:&origin];
+            originControl = points[0];
+            destination = points[1];
+            destinationControl = points[2];
+            CGPoint* results;
+            
+            int nPoints = somePointsOfBezier(origin, originControl,
+                                             destination, destinationControl,
+                                             &results);
+            
+            for (int i = 0; i < nPoints; ++i) {
+                NSValue *pointValue = [NSValue valueWithCGPoint:results[i]];
+                [bezierPoints addObject:pointValue];
+            }
+            
+            free(results);
+            results = NULL;
+        }
     }
+}
+
+/**
+ *  Get kSteps+1 points on the bezier line. While distributed equally over t the points will not be equidistant since t is nonlinearly related to distance travelled on the path.
+ *  Written by Rob Napier: http://robnapier.net/faster-bezier
+ *
+ *  @param origin             The point that the bezier segment originates from.
+ *  @param originControl      The origins control point.
+ *  @param destinationControl The destinations control point.
+ *  @param destination        The point in which the bezier ends.
+ *  @param results            A pointer to the place to put the array with the results. This array will need to be released using free(*results).
+ *
+ *  @return The number of points calculated.
+ */
+unsigned int somePointsOfBezier(CGPoint origin, CGPoint originControl,
+                                CGPoint destinationControl, CGPoint destination,
+                                CGPoint **results) {
+    *results = malloc((kSteps + 1) * sizeof(struct CGPoint));
+    
+    static CGFloat C0[kSteps] = {0};
+    static CGFloat C1[kSteps] = {0};
+    static CGFloat C2[kSteps] = {0};
+    static CGFloat C3[kSteps] = {0};
+    static int sInitialized = 0;
+    if (!sInitialized) {
+        for (unsigned step = 0; step <= kSteps; ++step) {
+            CGFloat t = (CGFloat)step/(CGFloat)kSteps;
+            C0[step] = (1-t)*(1-t)*(1-t); // * origin
+            C1[step] = 3 * (1-t)*(1-t) * t; // * originControl
+            C2[step] = 3 * (1-t) * t*t; // * destinationControl
+            C3[step] = t*t*t; // * destination;
+        }
+        sInitialized = 1;
+    }
+    
+    for (unsigned step = 0; step <= kSteps; ++step) {
+        CGPoint point = {
+            C0[step]*origin.x + C1[step]*originControl.x + C2[step]*destinationControl.x + C3[step]*destination.x,
+            C0[step]*origin.y + C1[step]*originControl.y + C2[step]*destinationControl.y + C3[step]*destination.y
+        };
+        (*results)[step] = point;
+    }
+    return kSteps + 1;
 }
 
 - (NSArray *)points
@@ -44,7 +112,7 @@ void getPointsFromBezier(void *info, const CGPathElement *element)
     return points;
 }
 
-// Return a Bezier path buit with the supplied points
+// Return a Bezier path built with the supplied points
 + (UIBezierPath *) pathWithPoints: (NSArray *) points
 {
     UIBezierPath *path = [UIBezierPath bezierPath];
@@ -68,7 +136,7 @@ void getPointsFromBezier(void *info, const CGPathElement *element)
 {
     // Use total length to calculate the percent of path consumed at each control point
     NSArray *points = self.points;
-    int pointCount = points.count;
+    int pointCount = (int)points.count;
     
     float totalPointLength = self.length;
     float distanceTravelled = 0.0f;
