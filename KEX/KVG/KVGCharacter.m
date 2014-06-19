@@ -79,19 +79,24 @@
 
 + (bool) isValidKanjiVGFile: (RXMLElement *) root
 {
-    NSRegularExpression *characterCodeRE =
-    [NSRegularExpression regularExpressionWithPattern:@"^kvg:([a-f0-9]{5})$"
-                                              options:NSRegularExpressionCaseInsensitive
-                                                error:nil];
+    BOOL isValid = false;
     
-    RXMLElement *characterGroup = [[[root children:@"g"] objectAtIndex:0] child:@"g"];
+    if ([root isValid] && [root.tag isEqualToString:@"svg"]) {
+        NSRegularExpression *characterCodeRE =
+        [NSRegularExpression regularExpressionWithPattern:@"^kvg:([a-f0-9]{5})$"
+                                                  options:NSRegularExpressionCaseInsensitive
+                                                    error:nil];
+        
+        RXMLElement *characterGroup = [[[root children:@"g"] objectAtIndex:0] child:@"g"];
+        
+        // Get the unicode character
+        NSString *idAttr = [characterGroup attribute:@"id"];
+        // Check if idAttr is valid
+        NSTextCheckingResult *valid = [characterCodeRE firstMatchInString:idAttr options:0 range:NSMakeRange(0, [idAttr length])];
+        isValid = valid.numberOfRanges > 0;
+    }
     
-    // Get the unicode character
-    NSString *idAttr = [characterGroup attribute:@"id"];
-    // Check if idAttr is valid
-    NSTextCheckingResult *valid = [characterCodeRE firstMatchInString:idAttr options:0 range:NSMakeRange(0, [idAttr length])];
-    
-    return valid;
+    return isValid;
 }
 
 @end

@@ -15,6 +15,7 @@
 @interface KVGStroke : NSObject
 
 @property (strong, nonatomic, readonly) UIBezierPath *path;
+@property (readonly) unichar type;
 @property (readonly) NSInteger strokeOrder;
 
 - (id)initFromRXML:(RXMLElement *)pathElement;

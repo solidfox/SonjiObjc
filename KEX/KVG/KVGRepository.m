@@ -37,7 +37,7 @@
 
 - (id)initWithLocalCacheURL:(NSURL *)localCacheURL
 {
-    self = [self init];
+    self = [super init];
     
     if (self) {
         self.document = [[UIManagedDocument alloc] initWithFileURL:localCacheURL];
@@ -54,6 +54,11 @@
     NSString *cacheDBName = @"KVGCache";
     NSURL *url = [documentsDirectory URLByAppendingPathComponent:cacheDBName];
     return [self initWithLocalCacheURL:url];
+}
+
+- (id)init
+{
+    return [self initWithDefaultLocalCacheURL];
 }
 
 - (void)loadCharacterDataFor:(unichar)character completionHandler:(void (^)(BOOL success))completionHandler
@@ -83,7 +88,7 @@
             
             kvgCharacter = [KVGCharacter characterFromSVGData:xmlCharacterData];
         } else {
-            NSAssert([results count] == 1, @"Fetched %lui results from database for character %C. Character property should be unique!", [results count], character);
+            NSAssert([results count] == 1, @"Fetched %lui results from database for character %C. Character property should be unique!", (unsigned long)[results count], character);
             KVGRawCharacter *rawCharacter = [results objectAtIndex:0];
             kvgCharacter = [KVGCharacter characterFromSVGData:rawCharacter.xmlData];
         }
