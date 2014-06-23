@@ -13,6 +13,7 @@
 #import "DSStrokeSonifier.h"
 #import "DSUserCharacterStroke.h"
 #import "UIBezierPath-Points.h"
+#import "KEX-Swift.h"
 
 
 @interface KEXLearningViewController ()
@@ -51,7 +52,8 @@
     
     for (UIButton *button in self.kanjiButtons) {
         unichar character = [[button titleForState:UIControlStateNormal] characterAtIndex:0];
-        [self.kanjiRepo loadCharacterDataFor:character completionHandler:^(BOOL success){NSLog(@"Loaded character: %u", character);}];
+        [self.kanjiRepo loadCharacterDataFor:character completionHandler:^(BOOL success){}];
+//        CharacterMetadataRepository *repo = [[CharacterMetadataRepository alloc] init];
     }
     
     NSAssert(self.nSuccessfulUserStrokes == 0, @"Weird initialization of nSuccessfulUserStrokes");
