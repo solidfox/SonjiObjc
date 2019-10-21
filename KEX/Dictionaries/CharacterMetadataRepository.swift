@@ -8,11 +8,11 @@
 import Foundation
 
 protocol CharacterMetadataRepositoryDelegate {
-    func characterMetadataRepository(repository: CharacterMetadataRepository, didFinishLoadingMetadata metadata: CharacterMetadata)
-    func characterMetadataRepository(repository: CharacterMetadataRepository, didFailLoadingMetadataForCharacter character: String, withError error: NSError!)
+    func _characterMetadataRepository(repository: CharacterMetadataRepository, didFinishLoadingMetadata metadata: CharacterMetadata)
+    func _characterMetadataRepository(repository: CharacterMetadataRepository, didFailLoadingMetadataForCharacter character: String, withError error: NSError!)
 }
 
-extension KVGCharacter {
+extension KVGEntry {
     class func filenameOfCharacter(character:Character) -> String {
         let characterString = String(character)
         let scalars = characterString.unicodeScalars
@@ -29,7 +29,7 @@ extension KVGCharacter {
 class CharacterMetadataRepository: NSObject {
     
     var _URLSession: NSURLSession
-    var _loadingCharacters: Dictionary<String, (KVGCharacter?, WWWJDICEntry?)> = [:]
+    var _loadingCharacters: Dictionary<String, (KVGEntry?, WWWJDICEntry?)> = [:]
     
     let delegate: CharacterMetadataRepositoryDelegate
     let delegateQueue: NSOperationQueue
@@ -41,21 +41,24 @@ class CharacterMetadataRepository: NSObject {
     }
     
     func loadCharacterMetadataFor(character: Character) {
-        if !_loadingCharacters[String(character)] {
+        
+        let alreadyLoadingCharacter = _loadingCharacters[String(character)] ? true : false
+        
+        if !alreadyLoadingCharacter {
             
             _loadingCharacters[String(character)] = (nil, nil)
             
             let urlEscapedCharacter = String(character).stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
-            let KVGFilename = KVGCharacter.filenameOfCharacter(character)
+            let KVGFilename = KVGEntry.filenameOfCharacter(character)
             let kanjiVGURL = NSURL.URLWithString("https://raw.github.com/KanjiVG/kanjivg/master/kanji/\(KVGFilename)")
             let wwwjdicURL = NSURL.URLWithString("http://www.csse.monash.edu.au/~jwb/cgi-bin/wwwjdic.cgi?1ZMJ\(urlEscapedCharacter)")
 
             let kanjiVGDownloadTask = _URLSession.downloadTaskWithURL(kanjiVGURL) {
-                (location, response, error) in
+                (localFile, response, error) in
                 
                 if error {
                     self.delegateQueue.addOperationWithBlock {
-                        self.delegate.characterMetadataRepository(self, didFailLoadingMetadataForCharacter: String(character), withError: error)
+                        self.delegate._characterMetadataRepository(self, didFailLoadingMetadataForCharacter: String(character), withError: error)
                     }
                     return
                 }
@@ -63,23 +66,20 @@ class CharacterMetadataRepository: NSObject {
                 var (_, optionalWWWJDICEntry) = self._loadingCharacters.removeValueForKey(String(character))!
                 
                 var error: NSError?
-                var data = NSData.dataWithContentsOfFile(location.path, options: NSDataReadingOptions.MappedRead, error: &error)
+                var data = NSData.dataWithContentsOfFile(localFile.path, options: NSDataReadingOptions.MappedRead, error: &error)
                 if error {
                     fatalError("CharacterMetadataRepository failed to load contents of just downloaded file.")
                 }
                 
-                var optionalKVGEntry = KVGCharacter.characterFromSVGData(data) as? KVGCharacter
+                var kvgEntry = KVGEntry(SVGData: data)
                 
-                if optionalWWWJDICEntry && optionalKVGEntry {
-                    let metadata = CharacterMetadata(kvg: optionalKVGEntry!, wwwjdic: optionalWWWJDICEntry!)
+                if optionalWWWJDICEntry {
+                    let metadata = CharacterMetadata(kvg: kvgEntry, wwwjdic: optionalWWWJDICEntry!)
                     self.delegateQueue.addOperationWithBlock {
-                        self.delegate.characterMetadataRepository(self, didFinishLoadingMetadata:metadata)
+                        self.delegate._characterMetadataRepository(self, didFinishLoadingMetadata:metadata)
                     }
-                } else if optionalKVGEntry {
-                    self._loadingCharacters[String(character)] = (optionalKVGEntry, nil)
                 } else {
-                    //TODO Return some sensible error
-                    self.delegate.characterMetadataRepository(self, didFailLoadingMetadataForCharacter: String(character), withError: nil)
+                    self._loadingCharacters[String(character)] = (kvgEntry, nil)
                 }
             }
             let wwwjdicDownloadTask = _URLSession.downloadTaskWithURL(wwwjdicURL) {
@@ -97,13 +97,13 @@ class CharacterMetadataRepository: NSObject {
                 if optionalWWWJDICEntry && optionalKVGEntry {
                     let metadata = CharacterMetadata(kvg: optionalKVGEntry!, wwwjdic: optionalWWWJDICEntry!)
                     self.delegateQueue.addOperationWithBlock {
-                        self.delegate.characterMetadataRepository(self, didFinishLoadingMetadata:metadata);
+                        self.delegate._characterMetadataRepository(self, didFinishLoadingMetadata:metadata);
                     }
                 } else if optionalWWWJDICEntry {
                     self._loadingCharacters[String(character)] = (nil, optionalWWWJDICEntry)
                 } else {
                     //TODO Return some sensible error
-                    self.delegate.characterMetadataRepository(self, didFailLoadingMetadataForCharacter: String(character), withError: nil)
+                    self.delegate._characterMetadataRepository(self, didFailLoadingMetadataForCharacter: String(character), withError: nil)
                 }
             }
             

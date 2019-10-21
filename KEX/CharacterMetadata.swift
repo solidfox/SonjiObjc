@@ -10,7 +10,7 @@ import Foundation
 
 @objc class CharacterMetadata {
     
-    let _kvg: KVGCharacter
+    let _kvg: KVGEntry
     let _wwwjdic: WWWJDICEntry
     
     var character: Character
@@ -18,7 +18,7 @@ import Foundation
     
     get {
         var strokes: KVGStroke[] = []
-        let optionalKVGStrokes = _kvg.strokes() as KVGStroke[]?
+        let optionalKVGStrokes = _kvg.strokes as KVGStroke[]?
         
         if let KVGStrokes = optionalKVGStrokes {
             strokes = KVGStrokes
@@ -45,7 +45,7 @@ import Foundation
     
     }
     
-    init(kvg: KVGCharacter!, wwwjdic: WWWJDICEntry!) {
+    init(kvg: KVGEntry!, wwwjdic: WWWJDICEntry!) {
         assert(kvg, "kvg cannot be nil")
         assert(wwwjdic, "wwwjdic cannot be nil")
         _kvg = kvg

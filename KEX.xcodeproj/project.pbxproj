@@ -21,17 +21,26 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		1B6202D6E02348A3995A1D5B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F81EB54718D34BA0B98EF3C1 /* libPods.a */; };
 		1FF59466FFB94C1A9CAF7CCD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F81EB54718D34BA0B98EF3C1 /* libPods.a */; };
 		960151A218BBB679009046C9 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 960151A118BBB679009046C9 /* libxml2.dylib */; };
 		960151A418BBB687009046C9 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 960151A318BBB687009046C9 /* libz.dylib */; };
-		960151A618BBB73D009046C9 /* 04e2d.svg in Resources */ = {isa = PBXBuildFile; fileRef = 960151A518BBB73D009046C9 /* 04e2d.svg */; };
-		96124CD918CC77BD0044BD6B /* libCMUnistrokeGestureRecognizer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96124CD618CC777E0044BD6B /* libCMUnistrokeGestureRecognizer.a */; };
-		961AE5151902681D001903BC /* KVGCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 961AE50C1902681D001903BC /* KVGCharacter.m */; };
-		961AE5161902681D001903BC /* KVGElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 961AE50E1902681D001903BC /* KVGElement.m */; };
-		961AE5181902681D001903BC /* KVGRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 961AE5121902681D001903BC /* KVGRepository.m */; };
-		961AE5191902681D001903BC /* KVGStroke.m in Sources */ = {isa = PBXBuildFile; fileRef = 961AE5141902681D001903BC /* KVGStroke.m */; };
-		961AE51F190269B8001903BC /* KVGCache.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 961AE51D190269B8001903BC /* KVGCache.xcdatamodeld */; };
-		961AE522190274E4001903BC /* KVGRawCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 961AE521190274E4001903BC /* KVGRawCharacter.m */; };
+		960B073A19474DB40072DA35 /* WWWJDICEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960B073919474DB40072DA35 /* WWWJDICEntry.swift */; };
+		960B074E19486E1F0072DA35 /* WWWJDICTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960B074D19486E1F0072DA35 /* WWWJDICTest.swift */; };
+		962042FD1951E09B005E18A4 /* CharacterTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962042FC1951E09B005E18A4 /* CharacterTester.swift */; };
+		962042FF1951E0AC005E18A4 /* CharacterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962042FE1951E0AC005E18A4 /* CharacterTest.swift */; };
+		962043011951E5C5005E18A4 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 962043001951E5C5005E18A4 /* Parse.framework */; };
+		962043031951E606005E18A4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 962043021951E606005E18A4 /* CFNetwork.framework */; };
+		962043051951E620005E18A4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 962043041951E620005E18A4 /* CoreLocation.framework */; };
+		962043071951E62E005E18A4 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 962043061951E62E005E18A4 /* MobileCoreServices.framework */; };
+		962043091951E63B005E18A4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 962043081951E63B005E18A4 /* QuartzCore.framework */; };
+		9620430B1951E645005E18A4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9620430A1951E645005E18A4 /* Security.framework */; };
+		9620430D1951E64E005E18A4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9620430C1951E64E005E18A4 /* StoreKit.framework */; };
+		9620430F1951E65C005E18A4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9620430E1951E65C005E18A4 /* SystemConfiguration.framework */; };
+		962043111951E8C7005E18A4 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 962043101951E8C7005E18A4 /* Accounts.framework */; };
+		962043131951E8D2005E18A4 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 962043121951E8D2005E18A4 /* Social.framework */; };
+		962043191951EA13005E18A4 /* FBSymbolPlaceholders.m in Sources */ = {isa = PBXBuildFile; fileRef = 962043181951EA13005E18A4 /* FBSymbolPlaceholders.m */; };
+		9620431A1951EA13005E18A4 /* FBSymbolPlaceholders.m in Sources */ = {isa = PBXBuildFile; fileRef = 962043181951EA13005E18A4 /* FBSymbolPlaceholders.m */; };
 		962EC57A19007D0800AED439 /* DSStrokeSonifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 962EC57819007D0800AED439 /* DSStrokeSonifier.m */; };
 		962EC57B19007D0800AED439 /* pitchedNoise.pd in Resources */ = {isa = PBXBuildFile; fileRef = 962EC57919007D0800AED439 /* pitchedNoise.pd */; };
 		962EC58919007F1400AED439 /* libpd-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 960C91B21900799100A3E9C3 /* libpd-ios.a */; };
@@ -39,11 +48,11 @@
 		962EC58D19007F3000AED439 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 962EC58C19007F3000AED439 /* AVFoundation.framework */; };
 		9643C085192CEACB00F50707 /* DSNotePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9643C084192CEACB00F50707 /* DSNotePlayer.m */; };
 		9643C089192DE71500F50707 /* Harp in Resources */ = {isa = PBXBuildFile; fileRef = 9643C088192DE71500F50707 /* Harp */; };
+		964CB84A1960C38700E0C075 /* BezierKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 964CB83E1960C30700E0C075 /* BezierKit.framework */; };
+		964CB84C1960C38800E0C075 /* DanielsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 964CB84B1960C38800E0C075 /* DanielsKit.framework */; };
 		964F25E618C491100041F2BD /* DSCharacterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 964F25E518C491100041F2BD /* DSCharacterView.m */; };
-		96576A2219210E5F006CCD78 /* KEXBrowsingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96576A2119210E5F006CCD78 /* KEXBrowsingTableViewController.m */; };
 		96576A241924C31E006CCD78 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 96576A231924C31E006CCD78 /* Podfile */; };
 		965DB7211924F7660038B2EB /* pink~.pd in Resources */ = {isa = PBXBuildFile; fileRef = 965DB7201924F7660038B2EB /* pink~.pd */; };
-		966F4DA118B5FCC2004EC50C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966F4DA018B5FCC2004EC50C /* Foundation.framework */; };
 		966F4DA318B5FCC2004EC50C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966F4DA218B5FCC2004EC50C /* CoreGraphics.framework */; };
 		966F4DA518B5FCC2004EC50C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966F4DA418B5FCC2004EC50C /* UIKit.framework */; };
 		966F4DAB18B5FCC2004EC50C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 966F4DA918B5FCC2004EC50C /* InfoPlist.strings */; };
@@ -58,12 +67,27 @@
 		966F4DC518B5FCC2004EC50C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966F4DA418B5FCC2004EC50C /* UIKit.framework */; };
 		966F4DCD18B5FCC2004EC50C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 966F4DCB18B5FCC2004EC50C /* InfoPlist.strings */; };
 		966F4DCF18B5FCC2004EC50C /* KEXTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 966F4DCE18B5FCC2004EC50C /* KEXTests.m */; };
-		96B8D678191399E100BEC4BA /* UIBezierPath-Points.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B8D675191399E100BEC4BA /* UIBezierPath-Points.m */; };
-		96B8D679191399E200BEC4BA /* UIBezierPath+Comparison.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B8D677191399E100BEC4BA /* UIBezierPath+Comparison.m */; };
+		967849EB1959A253009B6DFD /* CharacterTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962042FC1951E09B005E18A4 /* CharacterTester.swift */; };
+		967849EC1959A253009B6DFD /* CharacterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962042FE1951E0AC005E18A4 /* CharacterTest.swift */; };
+		96784A49195AF35A009B6DFD /* KVGStroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784A48195AF35A009B6DFD /* KVGStroke.swift */; };
+		96784A4A195B24AE009B6DFD /* KVGStroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784A48195AF35A009B6DFD /* KVGStroke.swift */; };
+		96784A90195B28DE009B6DFD /* KVGElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784A8F195B28DE009B6DFD /* KVGElement.swift */; };
+		96784A91195B28DE009B6DFD /* KVGElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784A8F195B28DE009B6DFD /* KVGElement.swift */; };
+		967EDFE8194EE2DF00212288 /* CharacterMetadataRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967EDFE7194EE2DF00212288 /* CharacterMetadataRepositoryTest.swift */; };
+		967EDFEB194EE37700212288 /* CharacterMetadataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E932AD194DA2DF009E0354 /* CharacterMetadataRepository.swift */; };
+		967EDFEC194EE37B00212288 /* CharacterMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C98CE1194613810087674A /* CharacterMetadata.swift */; };
+		967EDFED194EEFFF00212288 /* WWWJDICEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960B073919474DB40072DA35 /* WWWJDICEntry.swift */; };
 		96B8D67F1914D66D00BEC4BA /* DSUserCharacterStroke.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B8D67E1914D66D00BEC4BA /* DSUserCharacterStroke.m */; };
-		96B8D6821914E56E00BEC4BA /* KVGConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B8D6811914E56E00BEC4BA /* KVGConstants.m */; };
-		96C5D2191909F198004D68FA /* KVGCache.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 961AE51D190269B8001903BC /* KVGCache.xcdatamodeld */; };
 		96C5D21B1909F1D3004D68FA /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96C5D21A1909F1D3004D68FA /* CoreData.framework */; };
+		96C98CE2194613810087674A /* CharacterMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C98CE1194613810087674A /* CharacterMetadata.swift */; };
+		96D752E2195CB74D0028E860 /* KVGEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D752E1195CB74D0028E860 /* KVGEntry.swift */; };
+		96D752E3195CB74D0028E860 /* KVGEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D752E1195CB74D0028E860 /* KVGEntry.swift */; };
+		96D752EA195D6E720028E860 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966F4DA018B5FCC2004EC50C /* Foundation.framework */; };
+		96E932A4194CEECC009E0354 /* KVGCache.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96E93294194CEECC009E0354 /* KVGCache.xcdatamodeld */; };
+		96E932A6194CEECC009E0354 /* KVGConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E93299194CEECC009E0354 /* KVGConstants.m */; };
+		96E932A8194CEECC009E0354 /* KVGRawCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E9329D194CEECC009E0354 /* KVGRawCharacter.m */; };
+		96E932A9194CEECC009E0354 /* KVGRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E9329F194CEECC009E0354 /* KVGRepository.m */; };
+		96E932AE194DA2DF009E0354 /* CharacterMetadataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E932AD194DA2DF009E0354 /* CharacterMetadataRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +133,41 @@
 			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = "libpd-ios";
 		};
+		964CB83D1960C30700E0C075 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 964CB8361960C30700E0C075 /* BezierKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 964CB7881960B49200E0C075;
+			remoteInfo = BezierKit;
+		};
+		964CB83F1960C30700E0C075 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 964CB8361960C30700E0C075 /* BezierKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 964CB7931960B49200E0C075;
+			remoteInfo = BezierKitTests;
+		};
+		964CB8411960C30700E0C075 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 964CB8361960C30700E0C075 /* BezierKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 964CB80B1960BF8C00E0C075;
+			remoteInfo = BezierKitExample;
+		};
+		964CB8461960C36600E0C075 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 964CB8361960C30700E0C075 /* BezierKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 964CB7871960B49200E0C075;
+			remoteInfo = BezierKit;
+		};
+		964CB8481960C37100E0C075 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 964CB8361960C30700E0C075 /* BezierKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 964CB7871960B49200E0C075;
+			remoteInfo = BezierKit;
+		};
 		966F4DC618B5FCC2004EC50C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 966F4D9518B5FCC2004EC50C /* Project object */;
@@ -118,23 +177,40 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		96E93210194CE3EE009E0354 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		960151A118BBB679009046C9 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		960151A318BBB687009046C9 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		960151A518BBB73D009046C9 /* 04e2d.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = 04e2d.svg; path = ../04e2d.svg; sourceTree = "<group>"; };
+		960B073919474DB40072DA35 /* WWWJDICEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WWWJDICEntry.swift; path = Dictionaries/WWWJDICEntry.swift; sourceTree = "<group>"; };
+		960B074C19486E1E0072DA35 /* KEXTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "KEXTests-Bridging-Header.h"; path = "../KEX/KEXTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		960B074D19486E1F0072DA35 /* WWWJDICTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WWWJDICTest.swift; path = Dictionaries/WWWJDICTest.swift; sourceTree = "<group>"; };
 		960C91AC1900799100A3E9C3 /* libpd.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpd.xcodeproj; path = Frameworks/libpd/libpd.xcodeproj; sourceTree = "<group>"; };
 		96124CD018CC777E0044BD6B /* CMUnistrokeGestureRecognizer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CMUnistrokeGestureRecognizer.xcodeproj; path = ../Frameworks/CMUnistrokeRecognizer/CMUnistrokeGestureRecognizer/CMUnistrokeGestureRecognizer.xcodeproj; sourceTree = "<group>"; };
-		961AE50B1902681D001903BC /* KVGCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVGCharacter.h; sourceTree = "<group>"; };
-		961AE50C1902681D001903BC /* KVGCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVGCharacter.m; sourceTree = "<group>"; };
-		961AE50D1902681D001903BC /* KVGElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVGElement.h; sourceTree = "<group>"; };
-		961AE50E1902681D001903BC /* KVGElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVGElement.m; sourceTree = "<group>"; };
-		961AE5111902681D001903BC /* KVGRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVGRepository.h; sourceTree = "<group>"; };
-		961AE5121902681D001903BC /* KVGRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVGRepository.m; sourceTree = "<group>"; };
-		961AE5131902681D001903BC /* KVGStroke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVGStroke.h; sourceTree = "<group>"; };
-		961AE5141902681D001903BC /* KVGStroke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVGStroke.m; sourceTree = "<group>"; };
-		961AE51E190269B8001903BC /* KVGCache.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KVGCache.xcdatamodel; sourceTree = "<group>"; };
-		961AE520190274E4001903BC /* KVGRawCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVGRawCharacter.h; sourceTree = "<group>"; };
-		961AE521190274E4001903BC /* KVGRawCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVGRawCharacter.m; sourceTree = "<group>"; };
+		962042FC1951E09B005E18A4 /* CharacterTester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CharacterTester.swift; path = Learning/CharacterTester.swift; sourceTree = "<group>"; };
+		962042FE1951E0AC005E18A4 /* CharacterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CharacterTest.swift; path = Learning/CharacterTest.swift; sourceTree = "<group>"; };
+		962043001951E5C5005E18A4 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		962043021951E606005E18A4 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		962043041951E620005E18A4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		962043061951E62E005E18A4 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		962043081951E63B005E18A4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9620430A1951E645005E18A4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		9620430C1951E64E005E18A4 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		9620430E1951E65C005E18A4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		962043101951E8C7005E18A4 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		962043121951E8D2005E18A4 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		962043181951EA13005E18A4 /* FBSymbolPlaceholders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBSymbolPlaceholders.m; sourceTree = "<group>"; };
 		962EC57719007D0800AED439 /* DSStrokeSonifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DSStrokeSonifier.h; path = Sonification/DSStrokeSonifier.h; sourceTree = "<group>"; };
 		962EC57819007D0800AED439 /* DSStrokeSonifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DSStrokeSonifier.m; path = Sonification/DSStrokeSonifier.m; sourceTree = "<group>"; };
 		962EC57919007D0800AED439 /* pitchedNoise.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = pitchedNoise.pd; path = Sonification/PureData/pitchedNoise.pd; sourceTree = "<group>"; };
@@ -143,13 +219,13 @@
 		9643C083192CEACB00F50707 /* DSNotePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DSNotePlayer.h; path = Sonification/DSNotePlayer.h; sourceTree = "<group>"; };
 		9643C084192CEACB00F50707 /* DSNotePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DSNotePlayer.m; path = Sonification/DSNotePlayer.m; sourceTree = "<group>"; };
 		9643C088192DE71500F50707 /* Harp */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Harp; path = Sonification/Harp; sourceTree = "<group>"; };
+		964CB8361960C30700E0C075 /* BezierKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BezierKit.xcodeproj; path = ../BezierKit/BezierKit.xcodeproj; sourceTree = "<group>"; };
+		964CB84B1960C38800E0C075 /* DanielsKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DanielsKit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/KEX-hhkbsdccgfkctvdizbpiezuxadiq/Build/Products/Debug-iphoneos/DanielsKit.framework"; sourceTree = "<group>"; };
 		964F25E418C491100041F2BD /* DSCharacterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSCharacterView.h; sourceTree = "<group>"; };
 		964F25E518C491100041F2BD /* DSCharacterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSCharacterView.m; sourceTree = "<group>"; };
-		96576A2019210E5F006CCD78 /* KEXBrowsingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KEXBrowsingTableViewController.h; path = Browsing/KEXBrowsingTableViewController.h; sourceTree = "<group>"; };
-		96576A2119210E5F006CCD78 /* KEXBrowsingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KEXBrowsingTableViewController.m; path = Browsing/KEXBrowsingTableViewController.m; sourceTree = "<group>"; };
-		96576A231924C31E006CCD78 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		96576A231924C31E006CCD78 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		965DB7201924F7660038B2EB /* pink~.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "pink~.pd"; path = "Sonification/PureData/pink~.pd"; sourceTree = "<group>"; };
-		966F4D9D18B5FCC2004EC50C /* KEX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KEX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		966F4D9D18B5FCC2004EC50C /* Sonji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sonji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		966F4DA018B5FCC2004EC50C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		966F4DA218B5FCC2004EC50C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		966F4DA418B5FCC2004EC50C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -169,17 +245,25 @@
 		966F4DCA18B5FCC2004EC50C /* KEXTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KEXTests-Info.plist"; sourceTree = "<group>"; };
 		966F4DCC18B5FCC2004EC50C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		966F4DCE18B5FCC2004EC50C /* KEXTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KEXTests.m; sourceTree = "<group>"; };
+		96784A48195AF35A009B6DFD /* KVGStroke.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVGStroke.swift; sourceTree = "<group>"; };
+		96784A8F195B28DE009B6DFD /* KVGElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVGElement.swift; sourceTree = "<group>"; };
+		967EDFE7194EE2DF00212288 /* CharacterMetadataRepositoryTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CharacterMetadataRepositoryTest.swift; path = Dictionaries/CharacterMetadataRepositoryTest.swift; sourceTree = "<group>"; };
 		9690EDBC18C73039008FE980 /* CMUnistrokeGestureRecognizer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CMUnistrokeGestureRecognizer.xcodeproj; path = "/Users/spike/Dropbox/Developer/iOS/Frameworks/CMUnistrokeGestureRecognizer-master/CMUnistrokeGestureRecognizer/CMUnistrokeGestureRecognizer.xcodeproj"; sourceTree = "<absolute>"; };
-		9690EDCC18C9C5F7008FE980 /* libCMUnistrokeGestureRecognizer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCMUnistrokeGestureRecognizer.a; path = "../Frameworks/CMUnistrokeGestureRecognizer-master/CMUnistrokeGestureRecognizer/build/Debug-iphoneos/libCMUnistrokeGestureRecognizer.a"; sourceTree = "<group>"; };
-		96B8D674191399E100BEC4BA /* UIBezierPath-Points.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath-Points.h"; sourceTree = "<group>"; };
-		96B8D675191399E100BEC4BA /* UIBezierPath-Points.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath-Points.m"; sourceTree = "<group>"; };
-		96B8D676191399E100BEC4BA /* UIBezierPath+Comparison.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+Comparison.h"; sourceTree = "<group>"; };
-		96B8D677191399E100BEC4BA /* UIBezierPath+Comparison.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+Comparison.m"; sourceTree = "<group>"; };
 		96B8D67D1914D66D00BEC4BA /* DSUserCharacterStroke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSUserCharacterStroke.h; sourceTree = "<group>"; };
 		96B8D67E1914D66D00BEC4BA /* DSUserCharacterStroke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSUserCharacterStroke.m; sourceTree = "<group>"; };
-		96B8D6801914E56E00BEC4BA /* KVGConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVGConstants.h; sourceTree = "<group>"; };
-		96B8D6811914E56E00BEC4BA /* KVGConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVGConstants.m; sourceTree = "<group>"; };
 		96C5D21A1909F1D3004D68FA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		96C98CD91945A53A0087674A /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		96C98CDC19460C110087674A /* KEX-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KEX-Bridging-Header.h"; sourceTree = "<group>"; };
+		96C98CE1194613810087674A /* CharacterMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterMetadata.swift; sourceTree = "<group>"; };
+		96D752E1195CB74D0028E860 /* KVGEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVGEntry.swift; sourceTree = "<group>"; };
+		96E93295194CEECC009E0354 /* KVGCache.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KVGCache.xcdatamodel; sourceTree = "<group>"; };
+		96E93298194CEECC009E0354 /* KVGConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVGConstants.h; sourceTree = "<group>"; };
+		96E93299194CEECC009E0354 /* KVGConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVGConstants.m; sourceTree = "<group>"; };
+		96E9329C194CEECC009E0354 /* KVGRawCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVGRawCharacter.h; sourceTree = "<group>"; };
+		96E9329D194CEECC009E0354 /* KVGRawCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVGRawCharacter.m; sourceTree = "<group>"; };
+		96E9329E194CEECC009E0354 /* KVGRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVGRepository.h; sourceTree = "<group>"; };
+		96E9329F194CEECC009E0354 /* KVGRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVGRepository.m; sourceTree = "<group>"; };
+		96E932AD194DA2DF009E0354 /* CharacterMetadataRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CharacterMetadataRepository.swift; path = Dictionaries/CharacterMetadataRepository.swift; sourceTree = "<group>"; };
 		E235C8E93EEA47598DDE60AD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		F81EB54718D34BA0B98EF3C1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -189,16 +273,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				964CB84C1960C38800E0C075 /* DanielsKit.framework in Frameworks */,
+				964CB84A1960C38700E0C075 /* BezierKit.framework in Frameworks */,
+				96D752EA195D6E720028E860 /* Foundation.framework in Frameworks */,
+				962043131951E8D2005E18A4 /* Social.framework in Frameworks */,
+				962043111951E8C7005E18A4 /* Accounts.framework in Frameworks */,
+				9620430F1951E65C005E18A4 /* SystemConfiguration.framework in Frameworks */,
+				9620430D1951E64E005E18A4 /* StoreKit.framework in Frameworks */,
+				9620430B1951E645005E18A4 /* Security.framework in Frameworks */,
+				962043091951E63B005E18A4 /* QuartzCore.framework in Frameworks */,
+				962043071951E62E005E18A4 /* MobileCoreServices.framework in Frameworks */,
+				962043051951E620005E18A4 /* CoreLocation.framework in Frameworks */,
+				966F4DA318B5FCC2004EC50C /* CoreGraphics.framework in Frameworks */,
+				962043031951E606005E18A4 /* CFNetwork.framework in Frameworks */,
 				96C5D21B1909F1D3004D68FA /* CoreData.framework in Frameworks */,
 				962EC58D19007F3000AED439 /* AVFoundation.framework in Frameworks */,
 				962EC58B19007F2300AED439 /* AudioToolbox.framework in Frameworks */,
 				962EC58919007F1400AED439 /* libpd-ios.a in Frameworks */,
-				96124CD918CC77BD0044BD6B /* libCMUnistrokeGestureRecognizer.a in Frameworks */,
 				960151A418BBB687009046C9 /* libz.dylib in Frameworks */,
 				960151A218BBB679009046C9 /* libxml2.dylib in Frameworks */,
-				966F4DA318B5FCC2004EC50C /* CoreGraphics.framework in Frameworks */,
+				962043011951E5C5005E18A4 /* Parse.framework in Frameworks */,
 				966F4DA518B5FCC2004EC50C /* UIKit.framework in Frameworks */,
-				966F4DA118B5FCC2004EC50C /* Foundation.framework in Frameworks */,
 				1FF59466FFB94C1A9CAF7CCD /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,12 +305,26 @@
 				966F4DC318B5FCC2004EC50C /* XCTest.framework in Frameworks */,
 				966F4DC518B5FCC2004EC50C /* UIKit.framework in Frameworks */,
 				966F4DC418B5FCC2004EC50C /* Foundation.framework in Frameworks */,
+				1B6202D6E02348A3995A1D5B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		960B073819474D640072DA35 /* Dictionaries */ = {
+			isa = PBXGroup;
+			children = (
+				96C98CE1194613810087674A /* CharacterMetadata.swift */,
+				96E932AD194DA2DF009E0354 /* CharacterMetadataRepository.swift */,
+				96E931ED194CE347009E0354 /* KVG */,
+				960B073919474DB40072DA35 /* WWWJDICEntry.swift */,
+				967EDFE7194EE2DF00212288 /* CharacterMetadataRepositoryTest.swift */,
+				960B074D19486E1F0072DA35 /* WWWJDICTest.swift */,
+			);
+			name = Dictionaries;
+			sourceTree = "<group>";
+		};
 		960C91AD1900799100A3E9C3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,27 +341,6 @@
 				96124CD818CC777E0044BD6B /* CMUnistrokeGestureRecognizerTests.octest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		961AE50A1902681D001903BC /* KVG */ = {
-			isa = PBXGroup;
-			children = (
-				960151A518BBB73D009046C9 /* 04e2d.svg */,
-				96B8D6801914E56E00BEC4BA /* KVGConstants.h */,
-				96B8D6811914E56E00BEC4BA /* KVGConstants.m */,
-				961AE50B1902681D001903BC /* KVGCharacter.h */,
-				961AE50C1902681D001903BC /* KVGCharacter.m */,
-				961AE50D1902681D001903BC /* KVGElement.h */,
-				961AE50E1902681D001903BC /* KVGElement.m */,
-				961AE5111902681D001903BC /* KVGRepository.h */,
-				961AE5121902681D001903BC /* KVGRepository.m */,
-				961AE5131902681D001903BC /* KVGStroke.h */,
-				961AE5141902681D001903BC /* KVGStroke.m */,
-				961AE51D190269B8001903BC /* KVGCache.xcdatamodeld */,
-				961AE520190274E4001903BC /* KVGRawCharacter.h */,
-				961AE521190274E4001903BC /* KVGRawCharacter.m */,
-			);
-			path = KVG;
 			sourceTree = "<group>";
 		};
 		962EC57619007CF300AED439 /* Sonification */ = {
@@ -277,35 +365,38 @@
 			name = PureData;
 			sourceTree = "<group>";
 		};
-		96576A1919210163006CCD78 /* Learning interface */ = {
+		964CB8371960C30700E0C075 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				962EC57619007CF300AED439 /* Sonification */,
+				964CB83E1960C30700E0C075 /* BezierKit.framework */,
+				964CB8401960C30700E0C075 /* BezierKitTests.xctest */,
+				964CB8421960C30700E0C075 /* BezierKitExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		96576A1919210163006CCD78 /* Learning */ = {
+			isa = PBXGroup;
+			children = (
 				96B8D67D1914D66D00BEC4BA /* DSUserCharacterStroke.h */,
 				96B8D67E1914D66D00BEC4BA /* DSUserCharacterStroke.m */,
 				964F25E418C491100041F2BD /* DSCharacterView.h */,
 				964F25E518C491100041F2BD /* DSCharacterView.m */,
 				966F4DB818B5FCC2004EC50C /* KEXLearningViewController.h */,
 				966F4DB918B5FCC2004EC50C /* KEXLearningViewController.m */,
+				962042FC1951E09B005E18A4 /* CharacterTester.swift */,
+				962042FE1951E0AC005E18A4 /* CharacterTest.swift */,
 			);
-			name = "Learning interface";
-			sourceTree = "<group>";
-		};
-		96576A1C19210455006CCD78 /* Browsing interface */ = {
-			isa = PBXGroup;
-			children = (
-				96576A2019210E5F006CCD78 /* KEXBrowsingTableViewController.h */,
-				96576A2119210E5F006CCD78 /* KEXBrowsingTableViewController.m */,
-			);
-			name = "Browsing interface";
+			name = Learning;
 			sourceTree = "<group>";
 		};
 		966F4D9418B5FCC2004EC50C = {
 			isa = PBXGroup;
 			children = (
+				964CB8361960C30700E0C075 /* BezierKit.xcodeproj */,
 				960C91AC1900799100A3E9C3 /* libpd.xcodeproj */,
 				96124CD018CC777E0044BD6B /* CMUnistrokeGestureRecognizer.xcodeproj */,
-				966F4DA618B5FCC2004EC50C /* KEX */,
+				966F4DA618B5FCC2004EC50C /* Sonji */,
 				966F4DC818B5FCC2004EC50C /* KEXTests */,
 				966F4D9F18B5FCC2004EC50C /* Frameworks */,
 				966F4D9E18B5FCC2004EC50C /* Products */,
@@ -316,7 +407,7 @@
 		966F4D9E18B5FCC2004EC50C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				966F4D9D18B5FCC2004EC50C /* KEX.app */,
+				966F4D9D18B5FCC2004EC50C /* Sonji.app */,
 				966F4DC118B5FCC2004EC50C /* KEXTests.xctest */,
 			);
 			name = Products;
@@ -325,10 +416,20 @@
 		966F4D9F18B5FCC2004EC50C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				964CB84B1960C38800E0C075 /* DanielsKit.framework */,
+				962043121951E8D2005E18A4 /* Social.framework */,
+				962043101951E8C7005E18A4 /* Accounts.framework */,
+				962043001951E5C5005E18A4 /* Parse.framework */,
+				9620430E1951E65C005E18A4 /* SystemConfiguration.framework */,
+				9620430C1951E64E005E18A4 /* StoreKit.framework */,
+				9620430A1951E645005E18A4 /* Security.framework */,
+				962043081951E63B005E18A4 /* QuartzCore.framework */,
+				962043061951E62E005E18A4 /* MobileCoreServices.framework */,
+				962043041951E620005E18A4 /* CoreLocation.framework */,
+				962043021951E606005E18A4 /* CFNetwork.framework */,
 				96C5D21A1909F1D3004D68FA /* CoreData.framework */,
 				962EC58C19007F3000AED439 /* AVFoundation.framework */,
 				962EC58A19007F2300AED439 /* AudioToolbox.framework */,
-				9690EDCC18C9C5F7008FE980 /* libCMUnistrokeGestureRecognizer.a */,
 				960151A318BBB687009046C9 /* libz.dylib */,
 				960151A118BBB679009046C9 /* libxml2.dylib */,
 				966F4DA018B5FCC2004EC50C /* Foundation.framework */,
@@ -340,23 +441,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		966F4DA618B5FCC2004EC50C /* KEX */ = {
+		966F4DA618B5FCC2004EC50C /* Sonji */ = {
 			isa = PBXGroup;
 			children = (
+				962043181951EA13005E18A4 /* FBSymbolPlaceholders.m */,
 				966F4DB218B5FCC2004EC50C /* Main_iPhone.storyboard */,
-				96B8D67C191399ED00BEC4BA /* UIBezierPath */,
-				961AE50A1902681D001903BC /* KVG */,
-				96576A1919210163006CCD78 /* Learning interface */,
+				96C98CD91945A53A0087674A /* MyPlayground.playground */,
+				960B073819474D640072DA35 /* Dictionaries */,
+				962EC57619007CF300AED439 /* Sonification */,
+				96576A1919210163006CCD78 /* Learning */,
 				966F4DBB18B5FCC2004EC50C /* Images.xcassets */,
 				966F4DA718B5FCC2004EC50C /* Supporting Files */,
-				96576A1C19210455006CCD78 /* Browsing interface */,
 			);
+			name = Sonji;
 			path = KEX;
 			sourceTree = "<group>";
 		};
 		966F4DA718B5FCC2004EC50C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				96C98CDC19460C110087674A /* KEX-Bridging-Header.h */,
 				96576A231924C31E006CCD78 /* Podfile */,
 				966F4DB518B5FCC2004EC50C /* Main_iPad.storyboard */,
 				966F4DAF18B5FCC2004EC50C /* DSAppDelegate.h */,
@@ -372,6 +476,7 @@
 		966F4DC818B5FCC2004EC50C /* KEXTests */ = {
 			isa = PBXGroup;
 			children = (
+				960B074C19486E1E0072DA35 /* KEXTests-Bridging-Header.h */,
 				966F4DCE18B5FCC2004EC50C /* KEXTests.m */,
 				966F4DC918B5FCC2004EC50C /* Supporting Files */,
 			);
@@ -389,18 +494,26 @@
 		};
 		9690EDBE18C73433008FE980 /* Products */ = {
 			isa = PBXGroup;
+			children = (
+			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		96B8D67C191399ED00BEC4BA /* UIBezierPath */ = {
+		96E931ED194CE347009E0354 /* KVG */ = {
 			isa = PBXGroup;
 			children = (
-				96B8D674191399E100BEC4BA /* UIBezierPath-Points.h */,
-				96B8D675191399E100BEC4BA /* UIBezierPath-Points.m */,
-				96B8D676191399E100BEC4BA /* UIBezierPath+Comparison.h */,
-				96B8D677191399E100BEC4BA /* UIBezierPath+Comparison.m */,
+				96E93294194CEECC009E0354 /* KVGCache.xcdatamodeld */,
+				96E93298194CEECC009E0354 /* KVGConstants.h */,
+				96E93299194CEECC009E0354 /* KVGConstants.m */,
+				96E9329C194CEECC009E0354 /* KVGRawCharacter.h */,
+				96E9329D194CEECC009E0354 /* KVGRawCharacter.m */,
+				96E9329E194CEECC009E0354 /* KVGRepository.h */,
+				96E9329F194CEECC009E0354 /* KVGRepository.m */,
+				96784A48195AF35A009B6DFD /* KVGStroke.swift */,
+				96D752E1195CB74D0028E860 /* KVGEntry.swift */,
+				96784A8F195B28DE009B6DFD /* KVGElement.swift */,
 			);
-			name = UIBezierPath;
+			path = KVG;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,29 +528,34 @@
 				966F4D9A18B5FCC2004EC50C /* Frameworks */,
 				966F4D9B18B5FCC2004EC50C /* Resources */,
 				DE41EE4A56C746369BA7DFD7 /* Copy Pods Resources */,
+				96E93210194CE3EE009E0354 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				964CB8491960C37100E0C075 /* PBXTargetDependency */,
 				962EC58819007EE900AED439 /* PBXTargetDependency */,
 				96124CDB18CC7B5B0044BD6B /* PBXTargetDependency */,
 			);
 			name = KEX;
 			productName = KEX;
-			productReference = 966F4D9D18B5FCC2004EC50C /* KEX.app */;
+			productReference = 966F4D9D18B5FCC2004EC50C /* Sonji.app */;
 			productType = "com.apple.product-type.application";
 		};
 		966F4DC018B5FCC2004EC50C /* KEXTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 966F4DD518B5FCC2004EC50C /* Build configuration list for PBXNativeTarget "KEXTests" */;
 			buildPhases = (
+				08A3E862231843A798A8210F /* Check Pods Manifest.lock */,
 				966F4DBD18B5FCC2004EC50C /* Sources */,
 				966F4DBE18B5FCC2004EC50C /* Frameworks */,
 				966F4DBF18B5FCC2004EC50C /* Resources */,
+				F74D78E14BCB4C2B90238713 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				964CB8471960C36600E0C075 /* PBXTargetDependency */,
 				966F4DC718B5FCC2004EC50C /* PBXTargetDependency */,
 			);
 			name = KEXTests;
@@ -452,6 +570,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = DS;
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Daniel Schlaug";
 				TargetAttributes = {
@@ -472,6 +591,10 @@
 			productRefGroup = 966F4D9E18B5FCC2004EC50C /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = 964CB8371960C30700E0C075 /* Products */;
+					ProjectRef = 964CB8361960C30700E0C075 /* BezierKit.xcodeproj */;
+				},
 				{
 					ProductGroup = 9690EDBE18C73433008FE980 /* Products */;
 					ProjectRef = 9690EDBC18C73039008FE980 /* CMUnistrokeGestureRecognizer.xcodeproj */;
@@ -523,6 +646,27 @@
 			remoteRef = 96124CD718CC777E0044BD6B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		964CB83E1960C30700E0C075 /* BezierKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BezierKit.framework;
+			remoteRef = 964CB83D1960C30700E0C075 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		964CB8401960C30700E0C075 /* BezierKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = BezierKitTests.xctest;
+			remoteRef = 964CB83F1960C30700E0C075 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		964CB8421960C30700E0C075 /* BezierKitExample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = BezierKitExample.app;
+			remoteRef = 964CB8411960C30700E0C075 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -531,7 +675,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				965DB7211924F7660038B2EB /* pink~.pd in Resources */,
-				96C5D2191909F198004D68FA /* KVGCache.xcdatamodeld in Resources */,
 				962EC57B19007D0800AED439 /* pitchedNoise.pd in Resources */,
 				9643C089192DE71500F50707 /* Harp in Resources */,
 				96576A241924C31E006CCD78 /* Podfile in Resources */,
@@ -539,7 +682,6 @@
 				966F4DBC18B5FCC2004EC50C /* Images.xcassets in Resources */,
 				966F4DB418B5FCC2004EC50C /* Main_iPhone.storyboard in Resources */,
 				966F4DAB18B5FCC2004EC50C /* InfoPlist.strings in Resources */,
-				960151A618BBB73D009046C9 /* 04e2d.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,6 +696,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		08A3E862231843A798A8210F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		961AE4F519008285001903BC /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -597,6 +754,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F74D78E14BCB4C2B90238713 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -604,23 +776,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96784A90195B28DE009B6DFD /* KVGElement.swift in Sources */,
+				962042FD1951E09B005E18A4 /* CharacterTester.swift in Sources */,
 				962EC57A19007D0800AED439 /* DSStrokeSonifier.m in Sources */,
 				9643C085192CEACB00F50707 /* DSNotePlayer.m in Sources */,
 				966F4DAD18B5FCC2004EC50C /* main.m in Sources */,
-				961AE5161902681D001903BC /* KVGElement.m in Sources */,
-				961AE5191902681D001903BC /* KVGStroke.m in Sources */,
-				96B8D678191399E100BEC4BA /* UIBezierPath-Points.m in Sources */,
-				961AE522190274E4001903BC /* KVGRawCharacter.m in Sources */,
+				960B073A19474DB40072DA35 /* WWWJDICEntry.swift in Sources */,
 				964F25E618C491100041F2BD /* DSCharacterView.m in Sources */,
 				966F4DBA18B5FCC2004EC50C /* KEXLearningViewController.m in Sources */,
+				96784A49195AF35A009B6DFD /* KVGStroke.swift in Sources */,
 				96B8D67F1914D66D00BEC4BA /* DSUserCharacterStroke.m in Sources */,
-				961AE5181902681D001903BC /* KVGRepository.m in Sources */,
-				96576A2219210E5F006CCD78 /* KEXBrowsingTableViewController.m in Sources */,
+				96C98CE2194613810087674A /* CharacterMetadata.swift in Sources */,
+				96E932AE194DA2DF009E0354 /* CharacterMetadataRepository.swift in Sources */,
+				96E932A4194CEECC009E0354 /* KVGCache.xcdatamodeld in Sources */,
+				96E932A9194CEECC009E0354 /* KVGRepository.m in Sources */,
 				966F4DB118B5FCC2004EC50C /* DSAppDelegate.m in Sources */,
-				96B8D679191399E200BEC4BA /* UIBezierPath+Comparison.m in Sources */,
-				961AE51F190269B8001903BC /* KVGCache.xcdatamodeld in Sources */,
-				96B8D6821914E56E00BEC4BA /* KVGConstants.m in Sources */,
-				961AE5151902681D001903BC /* KVGCharacter.m in Sources */,
+				96E932A6194CEECC009E0354 /* KVGConstants.m in Sources */,
+				96D752E2195CB74D0028E860 /* KVGEntry.swift in Sources */,
+				962043191951EA13005E18A4 /* FBSymbolPlaceholders.m in Sources */,
+				96E932A8194CEECC009E0354 /* KVGRawCharacter.m in Sources */,
+				962042FF1951E0AC005E18A4 /* CharacterTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -628,7 +803,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				967EDFED194EEFFF00212288 /* WWWJDICEntry.swift in Sources */,
+				967849EC1959A253009B6DFD /* CharacterTest.swift in Sources */,
+				967EDFE8194EE2DF00212288 /* CharacterMetadataRepositoryTest.swift in Sources */,
+				967849EB1959A253009B6DFD /* CharacterTester.swift in Sources */,
+				9620431A1951EA13005E18A4 /* FBSymbolPlaceholders.m in Sources */,
 				966F4DCF18B5FCC2004EC50C /* KEXTests.m in Sources */,
+				967EDFEB194EE37700212288 /* CharacterMetadataRepository.swift in Sources */,
+				96784A91195B28DE009B6DFD /* KVGElement.swift in Sources */,
+				967EDFEC194EE37B00212288 /* CharacterMetadata.swift in Sources */,
+				96D752E3195CB74D0028E860 /* KVGEntry.swift in Sources */,
+				96784A4A195B24AE009B6DFD /* KVGStroke.swift in Sources */,
+				960B074E19486E1F0072DA35 /* WWWJDICTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,6 +830,16 @@
 			isa = PBXTargetDependency;
 			name = "libpd-ios";
 			targetProxy = 962EC58719007EE900AED439 /* PBXContainerItemProxy */;
+		};
+		964CB8471960C36600E0C075 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BezierKit;
+			targetProxy = 964CB8461960C36600E0C075 /* PBXContainerItemProxy */;
+		};
+		964CB8491960C37100E0C075 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BezierKit;
+			targetProxy = 964CB8481960C37100E0C075 /* PBXContainerItemProxy */;
 		};
 		966F4DC718B5FCC2004EC50C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -782,10 +978,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/KEX-hhkbsdccgfkctvdizbpiezuxadiq/Build/Products/Debug-iphoneos",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KEX/KEX-Prefix.pch";
 				INFOPLIST_FILE = "KEX/KEX-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_MODULE_NAME = KEX;
+				PRODUCT_NAME = Sonji;
+				SWIFT_OBJC_BRIDGING_HEADER = "KEX/KEX-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				USER_HEADER_SEARCH_PATHS = "../Frameworks/CMUnistrokeRecognizer/CMUnistrokeGestureRecognizer/CMUnistrokeGestureRecognizer ./Frameworks/**";
 				WRAPPER_EXTENSION = app;
 			};
@@ -797,10 +1005,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/KEX-hhkbsdccgfkctvdizbpiezuxadiq/Build/Products/Debug-iphoneos",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KEX/KEX-Prefix.pch";
 				INFOPLIST_FILE = "KEX/KEX-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_MODULE_NAME = KEX;
+				PRODUCT_NAME = Sonji;
+				SWIFT_OBJC_BRIDGING_HEADER = "KEX/KEX-Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = "../Frameworks/CMUnistrokeRecognizer/CMUnistrokeGestureRecognizer/CMUnistrokeGestureRecognizer ./Frameworks/**";
 				WRAPPER_EXTENSION = app;
 			};
@@ -808,8 +1027,11 @@
 		};
 		966F4DD618B5FCC2004EC50C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E235C8E93EEA47598DDE60AD /* Pods.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KEX.app/KEX";
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -822,7 +1044,11 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "KEXTests/KEXTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_MODULE_NAME = KEXTests;
+				PRODUCT_NAME = KEXTests;
+				SWIFT_OBJC_BRIDGING_HEADER = "KEX/KEXTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -830,8 +1056,11 @@
 		};
 		966F4DD718B5FCC2004EC50C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E235C8E93EEA47598DDE60AD /* Pods.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KEX.app/KEX";
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -840,7 +1069,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KEX/KEX-Prefix.pch";
 				INFOPLIST_FILE = "KEXTests/KEXTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_MODULE_NAME = KEXTests;
+				PRODUCT_NAME = KEXTests;
+				SWIFT_OBJC_BRIDGING_HEADER = "KEX/KEXTests-Bridging-Header.h";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -888,12 +1120,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		961AE51D190269B8001903BC /* KVGCache.xcdatamodeld */ = {
+		96E93294194CEECC009E0354 /* KVGCache.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				961AE51E190269B8001903BC /* KVGCache.xcdatamodel */,
+				96E93295194CEECC009E0354 /* KVGCache.xcdatamodel */,
 			);
-			currentVersion = 961AE51E190269B8001903BC /* KVGCache.xcdatamodel */;
+			currentVersion = 96E93295194CEECC009E0354 /* KVGCache.xcdatamodel */;
 			path = KVGCache.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -20,7 +20,7 @@ class CharacterMetadataRepositoryTest: XCTestCase, CharacterMetadataRepositoryDe
     var optionalFailExpectation: XCTestExpectation?
     var returnedMetadata: CharacterMetadata?
     
-    func characterMetadataRepository(repository: CharacterMetadataRepository, didFinishLoadingMetadata metadata: CharacterMetadata){
+    func _characterMetadataRepository(repository: CharacterMetadataRepository, didFinishLoadingMetadata metadata: CharacterMetadata){
         
         returnedMetadata = metadata
         if let expectation = optionalSuccessExpectation {
@@ -29,7 +29,7 @@ class CharacterMetadataRepositoryTest: XCTestCase, CharacterMetadataRepositoryDe
         
     }
     
-    func characterMetadataRepository(repository: CharacterMetadataRepository, didFailLoadingMetadataForCharacter character: String, withError error: NSError!) {
+    func _characterMetadataRepository(repository: CharacterMetadataRepository, didFailLoadingMetadataForCharacter character: String, withError error: NSError!) {
         returnedMetadata = nil
         if let expectation = optionalFailExpectation {
             expectation.fulfill()
@@ -48,25 +48,25 @@ class CharacterMetadataRepositoryTest: XCTestCase, CharacterMetadataRepositoryDe
         super.tearDown()
     }
 
-    func testGoodCharacterRetrieval() {
-        repo.loadCharacterMetadataFor("選")
-        optionalSuccessExpectation = self.expectationWithDescription("Expecting character metadata for 選")
-        self.waitForExpectationsWithTimeout(60, handler: nil)
-        if !returnedMetadata {
-            XCTFail("Didn't return metadata.")
-        }
-        if let metadata = returnedMetadata {
-            XCTAssertEqual(metadata.translations.filter {$0 == "elect"}.count, 1, "選 did not translate to elect")
-            XCTAssertEqual(metadata.kunReadings.filter {$0 == "えら.ぶ"}.count, 1, "選 did not have reading えら.ぶ")
-            XCTAssertEqual(metadata.strokes.count, 15, "選 had the wrong number of strokes")
-        }
-    }
-    
-    func testBadCharacterRetrieval() {
-        repo.loadCharacterMetadataFor("/")
-        optionalFailExpectation = self.expectationWithDescription("Not expecting character metadata for /")
-        self.waitForExpectationsWithTimeout(60, handler: nil)
-    }
+//    func testGoodCharacterRetrieval() {
+//        repo.loadCharacterMetadataFor("選")
+//        optionalSuccessExpectation = self.expectationWithDescription("Expecting character metadata for 選")
+//        self.waitForExpectationsWithTimeout(60, handler: nil)
+//        if !returnedMetadata {
+//            XCTFail("Didn't return metadata.")
+//        }
+//        if let metadata = returnedMetadata {
+//            XCTAssertEqual(metadata.translations.filter {$0 == "elect"}.count, 1, "選 did not translate to elect")
+//            XCTAssertEqual(metadata.kunReadings.filter {$0 == "えら.ぶ"}.count, 1, "選 did not have reading えら.ぶ")
+//            XCTAssertEqual(metadata.strokes.count, 15, "選 had the wrong number of strokes")
+//        }
+//    }
+//    
+//    func testBadCharacterRetrieval() {
+//        repo.loadCharacterMetadataFor("/")
+//        optionalFailExpectation = self.expectationWithDescription("Not expecting character metadata for /")
+//        self.waitForExpectationsWithTimeout(60, handler: nil)
+//    }
 
 //    func testPerformanceExample() {
 //        // This is an example of a performance test case.

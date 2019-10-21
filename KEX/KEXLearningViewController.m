@@ -7,12 +7,11 @@
 //
 
 #import "KEXLearningViewController.h"
-#import "KVGCharacter.h"
 #import "DSCharacterView.h"
 #import "KVGRepository.h"
 #import "DSStrokeSonifier.h"
 #import "DSUserCharacterStroke.h"
-#import "UIBezierPath-Points.h"
+#import <BezierKit/BezierKit.h>
 #import "KEX-Swift.h"
 
 
@@ -28,7 +27,7 @@
 
 @property (strong, nonatomic) KVGRepository *kanjiRepo;
 
-@property (strong, nonatomic) KVGCharacter *desiredKanji;
+@property (strong, nonatomic) KVGEntry *desiredKanji;
 @property (strong, nonatomic) KVGStroke *desiredStroke;
 @property (strong, nonatomic) DSUserCharacterStroke *userStroke;
 @property (nonatomic) NSUInteger nSuccessfulUserStrokes;
@@ -144,7 +143,7 @@
 
 - (IBAction)kanjiButtonPushed:(UIButton *)sender {
     unichar unicodeCharacter = [[sender titleForState:UIControlStateNormal] characterAtIndex:0];
-    KVGCharacter *character = [self.kanjiRepo KVGCharacterFor:unicodeCharacter];
+    KVGEntry *character = [self.kanjiRepo KVGCharacterFor:unicodeCharacter];
     [self setDesiredKanji:character];
 }
 
@@ -166,7 +165,7 @@
     return self.nSuccessfulUserStrokes + 1;
 }
 
-- (void)setDesiredKanji:(KVGCharacter *)desiredKanji
+- (void)setDesiredKanji:(KVGEntry *)desiredKanji
 {
     [self.desiredKanjiView removeStrokes];
     for (KVGStroke *stroke in [desiredKanji strokes]) {

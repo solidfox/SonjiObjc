@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import DanielsKit
 
 let _baseURL = "http://www.csse.monash.edu.au/~jwb/cgi-bin/wwwjdic.cgi?1ZMJ"
 let _WWWJDICDownloadQueue = NSOperationQueue()

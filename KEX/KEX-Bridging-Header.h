@@ -3,7 +3,4 @@
 //
 
 #import "RXMLElement.h"
-#import "KVGCharacter.h"
-#import "KVGStroke.h"
-#import "KVGRepository.h"
-#import "KVGElement.h"
+#import "PocketSVG.h"

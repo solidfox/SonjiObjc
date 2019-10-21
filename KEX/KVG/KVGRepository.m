@@ -65,7 +65,7 @@
 {
     
     [self.document performAsynchronousFileAccessUsingBlock:^{
-        KVGCharacter *kvgCharacter = nil;
+        KVGEntry *kvgCharacter = nil;
         
         NSManagedObjectContext *context = self.document.managedObjectContext;
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"KVGRawCharacter"];
@@ -86,11 +86,11 @@
             
             [self insertKVGRawCharacterFor:character withData:xmlCharacterData];
             
-            kvgCharacter = [KVGCharacter characterFromSVGData:xmlCharacterData];
+            kvgCharacter = [[KVGEntry alloc] initWithSVGData:xmlCharacterData];
         } else {
             NSAssert([results count] == 1, @"Fetched %lui results from database for character %C. Character property should be unique!", (unsigned long)[results count], character);
             KVGRawCharacter *rawCharacter = [results objectAtIndex:0];
-            kvgCharacter = [KVGCharacter characterFromSVGData:rawCharacter.xmlData];
+            kvgCharacter = [[KVGEntry alloc] initWithSVGData:rawCharacter.xmlData];
         }
         
         if (kvgCharacter) {
@@ -118,10 +118,10 @@
     return rawCharacter;
 }
 
-- (KVGCharacter *)KVGCharacterFor:(unichar)character
+- (KVGEntry *)KVGCharacterFor:(unichar)character
 {
     
-    KVGCharacter *KVGCharacter = [self.loadedCharacters objectForKey:[NSString stringWithFormat:@"%C", character]];
+    KVGEntry *KVGCharacter = [self.loadedCharacters objectForKey:[NSString stringWithFormat:@"%C", character]];
     
     if (!KVGCharacter) {
         NSLog(@"Character %u was not loaded when requested. This is probably not good at all!", character);

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "KVGConstants.h"
 #import <CoreData/CoreData.h>
-#import "KVGCharacter.h"
+#import "KEX-Swift.h"
 
 @interface KVGRepository : NSObject
 
@@ -39,7 +39,7 @@
  *
  *  @return Returns the KVGCharacter object for the given character provided that it has already been loaded into memory. Otherwise returns nil.
  */
-- (KVGCharacter *)KVGCharacterFor:(unichar)character;
+- (KVGEntry *)KVGCharacterFor:(unichar)character;
 
 /**
  *  Use this to initialize a new cached KVGRepository with its local cache file in the URL of your choice.

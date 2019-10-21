@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "KVGStroke.h"
+#import "KVGConstants.h"
+#import "KEX-Swift.h"
 
 @interface DSUserCharacterStroke : NSObject
 

@@ -1,0 +1,3 @@
+[submodule "Frameworks/libpd"]
+	path = Frameworks/libpd
+	url = https://github.com/libpd/libpd.git

@@ -1,0 +1,29 @@
+{
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "7FBA898D51AA204795EF06C7FED102A7E2E8C6D9" : 0,
+    "1A0B07D1631AC7F0F17FCE76695E42D64F01958F" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "1AD75D2E-072A-424C-B772-290643293DCA",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "7FBA898D51AA204795EF06C7FED102A7E2E8C6D9" : "Frameworks\/CMUnistrokeRecognizer\/",
+    "1A0B07D1631AC7F0F17FCE76695E42D64F01958F" : "KEX\/Frameworks\/libpd\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "KEX",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "KEX.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/libpd\/libpd.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1A0B07D1631AC7F0F17FCE76695E42D64F01958F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/solidfox\/CMUnistrokeGestureRecognizer.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7FBA898D51AA204795EF06C7FED102A7E2E8C6D9"
+    }
+  ]
+}
